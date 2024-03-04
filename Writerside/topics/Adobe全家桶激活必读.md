@@ -1,4 +1,13 @@
 # Adobe 全家桶激活必读
+激活Adobe后出现This non-genius app提示:
+![ATTENTION](../imgs/image-10.png)
+**解决办法:**
+
+不用代理工具的人想办法屏蔽下面的域名,用Surge的人解决方案简单如下:
+
+屏蔽所有*.adobe.io的域名,
+Surge手动增加规则DOMAIN-SUFFIX,值为adobe.io,但是要注意放行lcs-cops.adobe.io为DIRECT,否则App打开就会崩溃。Lr需要加入photo.adobe.io。
+![Adobe屏蔽](../imgs/image-9.png)
 
 ## 以LR CC为例：
 
