@@ -12,7 +12,7 @@ QiuChenly Team开源项目协会成员。
 > [QiuChenly(秋城落叶)](https://www.github.com/QiuChenly)
 
 参与贡献代码的成员(排名顺序全看QiuChenly心情)
-> [X1a0He(小何)](https://github.com/X1a0He)\
+> [X1a0He](https://github.com/X1a0He)\
 > [oilrich25](https://github.com/oilrich25)\
 > ...还有人待录入
 
