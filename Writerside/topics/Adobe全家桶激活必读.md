@@ -55,6 +55,12 @@
 Surge手动增加规则DOMAIN-SUFFIX,值为adobe.io,但是要注意放行lcs-cops.adobe.io为DIRECT,否则App打开就会崩溃。Lr需要加入photo.adobe.io。
 ![Adobe屏蔽](../imgs/image-9.png)
 
+## 我们拒绝签字
+
+![band.png](band.png)
+
+相信你知道你该点哪个。
+
 ## 激活
 
 运行脚本注入补丁。 即可完美享受，不受时间限制。
