@@ -32,3 +32,12 @@ E52D-8888888888
 88888888888888888888888888888888
 -----END LICENSE-----
 ```
+
+## Sublime Text 4 Package Control 无法安装包的问题
+
+这是由于官方app自带的PackageControl这个插件有问题。
+快捷键 ctrl+` 打开控制台, 安装最新的版本即可：
+
+```Python
+from urllib.request import urlretrieve;urlretrieve(url="https://github.com/wbond/package_control/releases/latest/download/Package.Control.sublime-package", filename=sublime.installed_packages_path() + '/Package Control.sublime-package')
+```
