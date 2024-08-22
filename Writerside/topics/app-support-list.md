@@ -70,7 +70,7 @@
 | MediaMate        |                                                               [通杀](https://wouter01.github.io/MediaMate/)                                                               |  ✅  |  ✅  |    注入后使用生成的序列号直接激活     |
 | LuminarNeo Mas版本 |                                        [1.18.2-通杀](https://apps.apple.com/cn/app/luminar-neo-ai-photo-editor/id1584373150?mt=12)                                        |  ✅  |  ✅  | 直接注入即可激活。如果没有意外后续版本通杀。 |
 | Sensei 系统信息查看工具  |                                                            [通杀](https://s3.amazonaws.com/cindori/Sensei.dmg)                                                            |  ✅  |  ✅  |    随便输入邮箱激活码6位以上即可     |
-| 设置啊噗噗            |                                            [通杀](https://dl.devmate.com/com.setapp.DesktopClient/75/1706298120/Setapp-75.zip)                                            |  ✅  |  ✅  | [必读说明](Setapp激活必读.md)  |
+| 设置啊噗噗            |                                            [通杀](https://dl.devmate.com/com.setapp.DesktopClient/75/1706298120/Setapp-75.zip)                                            |  ✅  |  ✅  |   [必读说明](setapp.md)    |
 | MarginNote 3     |                                                     [通杀](https://dist.marginnote.cn/marginnote3.xml?test=1&beta=1)                                                      |  ✅  |  ✅  |  无法使用云同步 签名后的app通病 无解  |
 | Bob              |                              [通杀](https://apps.apple.com/cn/app/bob-%E7%BF%BB%E8%AF%91%E5%92%8C-ocr-%E5%B7%A5%E5%85%B7/id1630034110?mt=12)                              |  ✅  |  ❌  |                        |
 | Rhino8           |                                                                    [8.4-?](https://www.rhino3d.com/)                                                                    |  ✅  |  ✅  |         x86没测试         |
@@ -120,9 +120,9 @@
 
 - 如果某个App出现激活问题，可以提issues并在评论区at维护者。
 
-| 名称                | 版本 | Arm | x86 | 备注                    | 维护者       |
-|-------------------|----|-----|-----|-----------------------|-----------|
-| SetApp 大部分App注入通杀 | /  | ✅   | ✅   | [特殊说明](Setapp激活必读.md) | QiuChenly |
+| 名称                | 版本 | Arm | x86 | 备注                | 维护者       |
+|-------------------|----|-----|-----|-------------------|-----------|
+| SetApp 大部分App注入通杀 | /  | ✅   | ✅   | [特殊说明](setapp.md) | QiuChenly |
 
 ## Adobes
 
