@@ -21,14 +21,55 @@
 ## 常规使用
 
 <note>
-目前基于 SwiftUI 的 InjectGUI 已经发布，但还不够稳定，建议先尝试 InjectGUI。
+目前基于 SwiftUI 的 <a href="https://github.com/wibus-wee/InjectGUI">InjectGUI</a> 已经发布，但还处于快速开发迭代阶段，其中部分功能可能并不稳定。<br/>
+尝试 <a href="https://github.com/wibus-wee/InjectGUI">InjectGUI</a> 遇到问题后可以向Wibus的仓库<a href="https://github.com/wibus-wee/InjectGUI/issues">InjectGUI的Issues</a>中提交issues报告，并回退到命令行注入模式。
 
-Python 版本的 “秋城落叶_启动.command” 脚本目前还只是过渡阶段， 所以如果遇到问题，请使用 InjectLib 内置脚本
+Python 版本的 “秋城落叶_启动.command” 脚本目前还只是过渡阶段， 所以如果遇到问题，请向QiuChenly提交 <a href="https://github.com/QiuChenly/InjectLib/issues">issues</a> 。
 </note>
 
-1. 直接克隆或下载仓库
-2. 双击 `秋城落叶_启动.command` 文件，输入用户密码。
-3. 扫描完成后，依次输入 `y/n` 决定是否破解当前扫描到的 App。
-4. 如果不是需要注入的 App，按 <shortcut>⏎ Enter</shortcut> 跳过。
-
 输入 `y` 自动解决所有问题，打开 App 即可享受。
+
+1. 直接克隆或下载仓库或直接点击下载本项目的[最新版本zip](https://github.com/QiuChenly/InjectLib/archive/refs/heads/main.zip)
+2. 解压后打开文件夹，双击`秋城落叶_启动.command`文件并输入你的 Mac 密码。
+3. 当扫描完成后，你需要做的就是:
+    - 扫描完成后，依次输入 `y/n` 决定是否破解当前扫描到的 App。
+    - 如果不是需要注入的 App，按 <shortcut>⏎ Enter</shortcut> 跳过。
+    - 输入 `y` 自动解决所有问题，打开 App 即可享受。
+
+### 程序员 或 喜欢研究的小伙伴使用
+确保你安装了最新版本的 [Git](https://git-scm.com/)，并且你的当前工作目录正是打算存放项目的目录。在命令行中运行以下命令
+```Bash
+git clone https://github.com/QiuChenly/InjectLib.git
+```
+
+这一指令将会自动克隆 InjectLib 仓库，你将会看到类似于下文中的
+```Bash
+正克隆到 'InjectLib'...
+remote: Enumerating objects: 584, done.
+remote: Counting objects: 100% (209/209), done.
+remote: Compressing objects: 100% (92/92), done.
+remote: Total 584 (delta 130), reused 142 (delta 105), pack-reused 375
+接收对象中: 100% (584/584), 42.47 MiB | 5.21 MiB/s, 完成.
+处理 delta 中: 100% (303/303), 完成.
+```
+
+现在 InjectLib 已经被克隆到你尊贵的 Mac 上了，通过以下步骤即可直接运行注入
+```Bash
+cd InjectLib
+python3 main.py
+```
+
+## 怎样才能知道当前支持的App状态？
+
+请访问 [支持App一览表](app-support-list.md) 查阅。
+
+<note>
+该表并不一定实时最新，其中描述的内容会因实际情况而发生改变，也可能存在与事实不一致的描述，仅供参考。
+</note>
+## 特殊的App说明 {#special-app}
+
+- [Setapp](setapp.md)
+- [Adobe](adobe.md)
+- [Emby Server](emby-server.md)
+- [Sublime](sublime.md)
+- [PD 19](parallels-desktop-19.md)
