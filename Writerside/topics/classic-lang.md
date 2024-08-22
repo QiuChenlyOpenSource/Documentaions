@@ -3,6 +3,8 @@
 ## XiaoP
 ![xiaop1.png](xiaop1.png)
 ![xiaop2.png](xiaop2.png)
+![xiaop3.png](xiaop3.png)
+![xiaop4.png](xiaop4.png)
 
 ## X1a0he
 
