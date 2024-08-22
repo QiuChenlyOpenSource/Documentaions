@@ -2,11 +2,14 @@
 <buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-    <variables></variables>
-    <build-profile instance="Manual">
-        <variables>
-            <noindex-content>false</noindex-content>
-        </variables>
-    </build-profile>
+    <variables>
+        <noindex-content>false</noindex-content>
+    </variables>
+    <footer>
+        <link href="https://t.me/qiuchenlymac">Telegram 频道</link>
+        <link href="https://t.me/+f3BWmkjVCzQwYzM1">群组</link>
+        <copyright>2024 QiuChenly Team.</copyright>
+    </footer>
+
 
 </buildprofiles>
