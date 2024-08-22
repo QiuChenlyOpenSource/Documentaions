@@ -4,19 +4,18 @@
 
 <instance-profile id="Manual"
                  name="InjectLib"
-                 start-page="starter-topic.md">
+                  start-page="getting-started.md">
 
-    <toc-element topic="starter-topic.md">
+    <toc-element topic="starter-topic.md"/>
+    <toc-element topic="getting-started.md">
+        <toc-element topic="adobe.md"/>
+        <toc-element topic="setapp.md"/>
+        <toc-element topic="sublime.md"/>
+        <toc-element topic="parallels-desktop-19.md"/>
+        <toc-element topic="media-mate.md"/>
+        <toc-element topic="emby-server.md"/>
     </toc-element>
-    <toc-element topic="使用方法.md"/>
-    <toc-element topic="介绍.md"/>
-    <toc-element topic="how-to-report.md"/>
+    <toc-element topic="faqs.md"/>
+    <toc-element topic="report-an-issue.md"/>
     <toc-element topic="blame.md"/>
-    <toc-element topic="常见问题.md"/>
-    <toc-element topic="Setapp激活必读.md"/>
-    <toc-element topic="Adobe全家桶激活必读.md"/>
-    <toc-element topic="Emby-Server激活必读.md"/>
-    <toc-element topic="Sublime激活必读.md"/>
-    <toc-element topic="MediaMate激活必读.md"/>
-    <toc-element topic="PD-19激活必读.md"/>
 </instance-profile>
