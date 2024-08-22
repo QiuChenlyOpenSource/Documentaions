@@ -19,4 +19,5 @@
     <toc-element topic="faqs.md"/>
     <toc-element topic="report-an-issue.md"/>
     <toc-element topic="blame.md"/>
+    <toc-element topic="classic-lang.md"/>
 </instance-profile>
