@@ -2,7 +2,7 @@
 
 本节旨在为正常智力的人类提供使用指导。
 
-## 先决条件
+## 先决条件 {#prerequisite}
 
 首先，你需要确认你的设备环境。
 
@@ -18,7 +18,7 @@
 
 如果你在使用过程中遇到任何问题，可以参考 [报告问题](report-an-issue.md) 部分在 YouTrack 或 GitHub 上提出详细问题。
 
-## 常规使用
+## 常规使用 {#general}
 
 <note>
 目前基于 SwiftUI 的 <a href="https://github.com/wibus-wee/InjectGUI">InjectGUI</a> 已经发布，但还处于快速开发迭代阶段，其中部分功能可能并不稳定。<br/>
@@ -36,13 +36,16 @@ Python 版本的 “秋城落叶_启动.command” 脚本目前还只是过渡�
     - 如果不是需要注入的 App，按 <shortcut>⏎ Enter</shortcut> 跳过。
     - 输入 `y` 自动解决所有问题，打开 App 即可享受。
 
-### 程序员 或 喜欢研究的小伙伴使用
-确保你安装了最新版本的 [Git](https://git-scm.com/)，并且你的当前工作目录正是打算存放项目的目录。在命令行中运行以下命令
+### 对于程序员或喜欢研究的小伙伴 {#manual}
+
+确保你已安装 [Git](https://git-scm.com/)，并且已切换到正确的工作目录。在命令行中运行以下命令：
+
 ```Bash
 git clone https://github.com/QiuChenly/InjectLib.git
 ```
 
-这一指令将会自动克隆 InjectLib 仓库，你将会看到类似于下文中的
+这一指令将会自动克隆 InjectLib 仓库，你将会看到与下面类似的文本：
+
 ```Bash
 正克隆到 'InjectLib'...
 remote: Enumerating objects: 584, done.
@@ -53,23 +56,24 @@ remote: Total 584 (delta 130), reused 142 (delta 105), pack-reused 375
 处理 delta 中: 100% (303/303), 完成.
 ```
 
-现在 InjectLib 已经被克隆到你尊贵的 Mac 上了，通过以下步骤即可直接运行注入
+现在 InjectLib 已经被克隆到你尊贵的 Mac 上了，通过以下命令即可直接运行注入。
+
 ```Bash
 cd InjectLib
 python3 main.py
 ```
 
-## 怎样才能知道当前支持的App状态？
+## 怎样才能知道当前支持的 App 状态？ {#support-status}
 
-请访问 [支持App一览表](app-support-list.md) 查阅。
+请访问 [App 支持状态一览表](app-support-list.md) 查阅。
 
 <note>
 该表并不一定实时最新，其中描述的内容会因实际情况而发生改变，也可能存在与事实不一致的描述，仅供参考。
 </note>
-## 特殊的App说明 {#special-app}
+## 特殊的 App 说明 {#special-app}
 
-- [Setapp](setapp.md)
 - [Adobe](adobe.md)
-- [Emby Server](emby-server.md)
+- [Setapp](setapp.md)
 - [Sublime](sublime.md)
-- [PD 19](parallels-desktop-19.md)
+- [Parallels Desktop 19](parallels-desktop-19.md)
+- [Emby Server](emby-server.md)
