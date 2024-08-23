@@ -1,5 +1,7 @@
 # Emby Server
 
+<link-summary>要注入 Emby Server 将多 2 步</link-summary>
+
 ## 支持版本: 4.7.14.0
 
 下载地址:

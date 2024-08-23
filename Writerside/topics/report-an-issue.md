@@ -1,5 +1,7 @@
 # 报告问题
 
+<link-summary>在 Giuthub 上报告问题</link-summary>
+
 ## 在 Github 上报告问题
 
 * 前往 <https://github.com/QiuChenly/InjectLib/issues/new>
