@@ -16,20 +16,19 @@
 
 [//]: # (CEFR 分数达到 B1（中级，雅思 4.0 - 5.0）或以上)
 
-如果你在使用过程中遇到任何问题，可以参考 [报告问题](report-an-issue.md) 部分在 YouTrack 或 GitHub 上提出详细问题。
+如果你在使用过程中遇到任何问题，可以参考 [报告问题](report-an-issue.md) 部分在 GitHub 上提出详细问题。
 
 ## 常规使用 {#general}
 
-<note>
-目前基于 SwiftUI 的 <a href="https://github.com/wibus-wee/InjectGUI">InjectGUI</a> 已经发布，但还处于快速开发迭代阶段，其中部分功能可能并不稳定。<br/>
-尝试 <a href="https://github.com/wibus-wee/InjectGUI">InjectGUI</a> 遇到问题后可以向Wibus的仓库<a href="https://github.com/wibus-wee/InjectGUI/issues">InjectGUI的Issues</a>中提交issues报告，并回退到命令行注入模式。
-
-Python 版本的 “秋城落叶_启动.command” 脚本目前还只是过渡阶段， 所以如果遇到问题，请向QiuChenly提交 <a href="https://github.com/QiuChenly/InjectLib/issues">issues</a> 。
-</note>
+> 目前基于 SwiftUI 的 [InjectGUI](https://github.com/wibus-wee/InjectGUI) 已经发布，但还处于快速开发迭代阶段，其中部分功能可能并不稳定。<br/>
+> 尝试 InjectGUI 遇到问题后可以向 Wibus 的仓库中提交 [issues](https://github.com/wibus-wee/InjectGUI/issues)，并回退到命令行注入模式。
+> 
+> Python 版本的 `秋城落叶_启动.command` 脚本目前还只是过渡阶段， 所以如果遇到问题，请向 QuChenly 提交 [issues](report-an-issue.md)。
+> {style="note"}
 
 输入 `y` 自动解决所有问题，打开 App 即可享受。
 
-1. 直接克隆或下载仓库或直接点击下载本项目的[最新版本zip](https://github.com/QiuChenly/InjectLib/archive/refs/heads/main.zip)
+1. 直接克隆或下载仓库或直接点击下载本项目的 [最新版本 zip](https://github.com/QiuChenly/InjectLib/archive/refs/heads/main.zip)
 2. 解压后打开文件夹，双击`秋城落叶_启动.command`文件并输入你的 Mac 密码。
 3. 当扫描完成后，你需要做的就是:
     - 扫描完成后，依次输入 `y/n` 决定是否破解当前扫描到的 App。
@@ -38,7 +37,7 @@ Python 版本的 “秋城落叶_启动.command” 脚本目前还只是过渡�
 
 ### 对于程序员或喜欢研究的小伙伴 {#manual}
 
-确保你已安装 [Git](https://git-scm.com/)，并且已切换到正确的工作目录。在命令行中运行以下命令：
+确保你已安装 [Git](https://git-scm.com/)，并且已切换到正确的工作目录。在终端中运行以下命令：
 
 ```Bash
 git clone https://github.com/QiuChenly/InjectLib.git

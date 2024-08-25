@@ -16,7 +16,10 @@
         <toc-element topic="emby-server.md"/>
     </toc-element>
     <toc-element topic="app-support-list.md"/>
-    <toc-element topic="faqs.md"/>
+    <toc-element topic="faqs.md">
+        <toc-element topic="request-keychain-access.md"/>
+        <toc-element topic="file-is-damaged.md"/>
+    </toc-element>
     <toc-element topic="report-an-issue.md"/>
     <toc-element topic="some-complaints.md"/>
     <toc-element topic="classic-quotes.md"/>
