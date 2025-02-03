@@ -7,10 +7,14 @@
 - **MAS:** App需要在 Mac App Store 中下载
 - **通杀:** 指在一定范围内的版本都可以使用这个破解方法。如果失效请[向我们报告](report-an-issue.md)。
 - **版本号:** 仅用于参考，表示支持的最低版本，因为部分 App 任何版本都是通杀的。
+- **Telegram 资讯发布群:** https://t.me/+f3BWmkjVCzQwYzM1
+- **Telegram 资讯发布频道:** https://t.me/qiuchenlymac
 
 > **版本号不一定实时更新。**
 >
 > 所有 App 均在 **SIP Enable** 的情况下测试通过。
+> 
+> 使用本补丁的Mac强制要求启用SIP，禁止关闭SIP使用。SIP未启用导致出现的任何问题禁止报告。
 >
 > 如果你发现版本号可以被点击，那就说明你可以通过点击直接下载我们建议的 App 版本进行注入。
 > {style="note"}
@@ -25,60 +29,56 @@
 | Navicat 16 for Oracle | 16.3.6 | ✅  |  ✅  |  ✅  | [MAS Latest](https://apps.apple.com/cn/app/navicat-16-for-oracle/id1605432371?mt=12) |
 
 ### ProxyMan Apps
+本app将会单独发布破解后的dmg。
 
 | App      |  版本   | 通杀 | Arm | x86 |                      备注                       |
 |----------|:-----:|:--:|:---:|:---:|:---------------------------------------------:|
-| ProxyMan | 5.0.0 | ✅  |  ✅  |  ✅  | [Latest](https://proxyman.io/osx/version.xml) |
-
-### CleanMyMac Apps
-
-| App          | 版本     | 通杀 | Arm | x86 | 备注                                                                                                        |
-|--------------|--------|:--:|:---:|:---:|-----------------------------------------------------------------------------------------------------------|
-| CleanMyMac X | 4.15.3 | ✅  |  ✅  |  ✅  | [下载地址](https://s3-us-west-2.amazonaws.com/updateinfo.devmate.com/com.macpaw.CleanMyMac4/beta/updates.xml) |
+| ProxyMan | 5.0.0 | ❌  |  ❌  |  ❌  | [Latest](https://proxyman.io/osx/version.xml) |
 
 ### Office Apps
 
-| App        |  版本   | 通杀 | Arm | x86 |                                      备注                                      |
-|------------|:-----:|:--:|:---:|:---:|:----------------------------------------------------------------------------:|
-| Word       | 16.83 | ✅  | ⚠️  |  ✅  |    [下载地址](https://apps.apple.com/cn/app/microsoft-word/id462054704?mt=12)    |
-| Excel      | 16.83 | ✅  |  ✅  |  ✅  |   [下载地址](https://apps.apple.com/cn/app/microsoft-excel/id462058435?mt=12)    |
-| PowerPoint | 16.83 | ✅  |  ✅  |  ✅  | [下载地址](https://apps.apple.com/cn/app/microsoft-powerpoint/id462062816?mt=12) |
+| App        |   版本    | 通杀 | Arm | x86 |                                      备注                                      |
+|------------|:-------:|:--:|:---:|:---:|:----------------------------------------------------------------------------:|
+| Word       | 16.93.1 | ✅  | ✅️  |  ✅  |    [下载地址](https://apps.apple.com/cn/app/microsoft-word/id462054704?mt=12)    |
+| Excel      |  16.93  | ✅  |  ✅  |  ✅  |   [下载地址](https://apps.apple.com/cn/app/microsoft-excel/id462058435?mt=12)    |
+| PowerPoint | 16.93.2 | ✅  |  ✅  |  ✅  | [下载地址](https://apps.apple.com/cn/app/microsoft-powerpoint/id462062816?mt=12) |
 
 ### 违法翻墙
 
 | App   | 版本                                                         | Arm | x86 | 备注                                               |
 |-------|------------------------------------------------------------|----:|----:|--------------------------------------------------|
 | Stash | [通杀](https://mac-release-static.stash.ws/Stash-latest.zip) |   ✅ |   ✅ | [更新地址](https://mac-release.stash.ws/appcast.xml) |
+| Surge | [2838](https://t.me/qiuchenlymac/441)                      |   ✅ |   ✅ | 直接下载破解好的压缩包使用: https://t.me/qiuchenlymac/441     |
 
 ### Other Apps
 
-| App              |                                                                                   版本                                                                                    | Arm | x86 |           备注           |
-|------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---:|:---:|:----------------------:|
-| Macs Fan Control |                                                     [Latest](https://crystalidea.com/downloads/macsfancontrol.zip)                                                      |  ✅  |  ✅  |                        |
-| DevUtils         |                                                           [Latest](https://devutils.com/archives/appcast.xml)                                                           |  ✅  |  ✅  |      功能可用 激活状态懒得改      |
-| MP3Tag           |                                                            [Latest](https://updates.mp3tag.app/appcast.xml)                                                             |  ✅  |  ✅  |        序列号随便输入         |
-| Bartender 5      |                                                   [Latest](https://www.macbartender.com/B2/updates/TestAppcastB5.xml)                                                   |  ✅  |  ✅  |                        |
-| 花见壁纸             |                 [Latest](https://apps.apple.com/cn/app/%E8%8A%B1%E8%A6%8B-4k%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8%E5%BC%95%E6%93%8E/id1456235760?mt=12)                  |  ✅  |  ✅  |                        | 
-| Paste            |                                                                                  4.1.2                                                                                  |  ✅  |  ✅  |        全新算法，杀！         |
-| TablePlus        |                                                        [通杀](https://tableplus.com/release/osx/tableplus_latest)                                                         |  ✅  |  ✅  |                        |
-| Transmit 5       |                                                                                  5.9.2                                                                                  |  ✅  |  ✅  |     需要从App Store下载     |
-| Widgetter        | [通杀](https://apps.apple.com/cn/app/widgetter-%E5%B0%8F%E5%B7%A5%E5%85%B7-%E6%A1%8C%E9%9D%A2%E5%A3%81%E7%BA%B8-%E4%B8%BB%E9%A2%98-%E5%B1%8F%E4%BF%9D/id1553223588?mt=12) |  ✅  |  ✅  |      MAS下载 激活全部功能      |
-| QCAD-Intel       |                                            [3.28.2](https://www.qcad.org/archives/qcad/qcad-3.28.2-trial-macos-10.14-13.dmg)                                            |  ❌  |  ✅  |         ARM懒得弄         |
-| Bandizip 365     |                                                                                   通杀                                                                                    |  ✅  |  ✅  |          订阅版           |
-| Bandizip         |                                                                                  7.28                                                                                   |  ✅  |  ✅  |          买断版           |
-| Typora           |                                                             [通杀](https://download.typora.io/mac/Typora.dmg)                                                             |  ✅  |  ✅  |                        |
-| Medis            |                                                            [3100](https://api.getmedis.com/medis-latest.zip)                                                            |  ✅  |  ✅  |        仅支持3100         |
-| Camtasia 2023    |                                                      [2023.3.4(124306)通杀](https://www.techsmith.com/camtasia.html)                                                      |  ✅  |  ✅  |        通殺不要問為什麼        |
-| UlyssesMac       |          [MAS版本](https://apps.apple.com/us/app/ulysses-%E5%86%99%E4%BD%9C-%E7%AC%94%E8%AE%B0-%E6%97%A5%E8%AE%B0-%E5%8D%9A%E5%AE%A2/id1225570693?l=zh-Hans-CN)           |  ✅  |  ✅  |    苹果应用商店版本,后续版本通杀     |
-| MindMac          |                                         [官网版本](https://github.com/MindMacApp/MindMac/releases/download/1.8.7/MindMac_1.8.7.dmg)                                         |  ✅  |  ✅  |    随便输入邮箱激活码6位以上即可     |
-| MediaMate        |                                                               [通杀](https://wouter01.github.io/MediaMate/)                                                               |  ✅  |  ✅  |    注入后使用生成的序列号直接激活     |
-| LuminarNeo Mas版本 |                                        [1.18.2-通杀](https://apps.apple.com/cn/app/luminar-neo-ai-photo-editor/id1584373150?mt=12)                                        |  ✅  |  ✅  | 直接注入即可激活。如果没有意外后续版本通杀。 |
-| Sensei 系统信息查看工具  |                                                            [通杀](https://s3.amazonaws.com/cindori/Sensei.dmg)                                                            |  ✅  |  ✅  |    随便输入邮箱激活码6位以上即可     |
-| 设置啊噗噗            |                                            [通杀](https://dl.devmate.com/com.setapp.DesktopClient/75/1706298120/Setapp-75.zip)                                            |  ✅  |  ✅  |   [必读说明](setapp.md)    |
-| MarginNote 3     |                                                     [通杀](https://dist.marginnote.cn/marginnote3.xml?test=1&beta=1)                                                      |  ✅  |  ✅  |  无法使用云同步 签名后的app通病 无解  |
-| Bob              |                              [通杀](https://apps.apple.com/cn/app/bob-%E7%BF%BB%E8%AF%91%E5%92%8C-ocr-%E5%B7%A5%E5%85%B7/id1630034110?mt=12)                              |  ✅  |  ❌  |                        |
-| Rhino8           |                                                                    [8.4-?](https://www.rhino3d.com/)                                                                    |  ✅  |  ✅  |         x86没测试         |
-| Shottr           |                                                                        [通杀](https://shottr.cc/)                                                                         |  ✅  |  ✅  |     输入任意license激活      |
+| App                                        |                                                                                   版本                                                                                    | Arm | x86 |           备注           |
+|--------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---:|:---:|:----------------------:|
+| Macs Fan Control                           |                                                     [Latest](https://crystalidea.com/downloads/macsfancontrol.zip)                                                      |  ✅  |  ✅  |                        |
+| DevUtils                                   |                                                           [Latest](https://devutils.com/archives/appcast.xml)                                                           |  ✅  |  ✅  |      功能可用 激活状态懒得改      |
+| MP3Tag                                     |                                                            [Latest](https://updates.mp3tag.app/appcast.xml)                                                             |  ✅  |  ✅  |        序列号随便输入         |
+| Bartender 5                                |                                                   [Latest](https://www.macbartender.com/B2/updates/TestAppcastB5.xml)                                                   |  ✅  |  ✅  |                        |
+| 花见壁纸                                       |                 [Latest](https://apps.apple.com/cn/app/%E8%8A%B1%E8%A6%8B-4k%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8%E5%BC%95%E6%93%8E/id1456235760?mt=12)                  |  ✅  |  ✅  |                        | 
+| Paste                                      |                                                                                  4.1.2                                                                                  |  ✅  |  ✅  |        全新算法，杀！         |
+| TablePlus                                  |                                                        [通杀](https://tableplus.com/release/osx/tableplus_latest)                                                         |  ✅  |  ✅  |                        |
+| Transmit 5                                 |                                                                                  5.9.2                                                                                  |  ✅  |  ✅  |     需要从App Store下载     |
+| Widgetter                                  | [通杀](https://apps.apple.com/cn/app/widgetter-%E5%B0%8F%E5%B7%A5%E5%85%B7-%E6%A1%8C%E9%9D%A2%E5%A3%81%E7%BA%B8-%E4%B8%BB%E9%A2%98-%E5%B1%8F%E4%BF%9D/id1553223588?mt=12) |  ✅  |  ✅  |      MAS下载 激活全部功能      |
+| QCAD-Intel                                 |                                            [3.28.2](https://www.qcad.org/archives/qcad/qcad-3.28.2-trial-macos-10.14-13.dmg)                                            |  ❌  |  ✅  |         ARM懒得弄         |
+| Bandizip 365                               |                                                                                   通杀                                                                                    |  ✅  |  ✅  |          订阅版           |
+| Bandizip                                   |                                                                                  7.28                                                                                   |  ✅  |  ✅  |          买断版           |
+| Typora                                     |                                                             [通杀](https://download.typora.io/mac/Typora.dmg)                                                             |  ✅  |  ✅  |                        |
+| Medis                                      |                                                            [3100](https://api.getmedis.com/medis-latest.zip)                                                            |  ✅  |  ✅  |        仅支持3100         |
+| Camtasia 2023                              |                                                      [2023.3.4(124306)通杀](https://www.techsmith.com/camtasia.html)                                                      |  ✅  |  ✅  |        通殺不要問為什麼        |
+| UlyssesMac                                 |          [MAS版本](https://apps.apple.com/us/app/ulysses-%E5%86%99%E4%BD%9C-%E7%AC%94%E8%AE%B0-%E6%97%A5%E8%AE%B0-%E5%8D%9A%E5%AE%A2/id1225570693?l=zh-Hans-CN)           |  ✅  |  ✅  |    苹果应用商店版本,后续版本通杀     |
+| MindMac                                    |                                         [官网版本](https://github.com/MindMacApp/MindMac/releases/download/1.8.7/MindMac_1.8.7.dmg)                                         |  ✅  |  ✅  |    随便输入邮箱激活码6位以上即可     |
+| MediaMate                                  |                                                               [通杀](https://wouter01.github.io/MediaMate/)                                                               |  ✅  |  ✅  |    注入后使用生成的序列号直接激活     |
+| LuminarNeo Mas版本                           |                                        [1.22.0-通杀](https://apps.apple.com/cn/app/luminar-neo-ai-photo-editor/id1584373150?mt=12)                                        |  ✅  |  ✅  | 直接注入即可激活。如果没有意外后续版本通杀。 |
+| Sensei 系统信息查看工具                            |                                                            [通杀](https://s3.amazonaws.com/cindori/Sensei.dmg)                                                            |  ✅  |  ✅  |    随便输入邮箱激活码6位以上即可     |
+| Setapp 全系列                                 |                                            [通杀](https://dl.devmate.com/com.setapp.DesktopClient/75/1706298120/Setapp-75.zip)                                            |  ✅  |  ✅  |   [必读说明](setapp.md)    |
+| MarginNote 3                               |                                                     [通杀](https://dist.marginnote.cn/marginnote3.xml?test=1&beta=1)                                                      |  ✅  |  ✅  |  无法使用云同步 签名后的app通病 无解  |
+| Parallels Desktop 20.2.0 + Parallels Tools |                                                             [版权问题,请点击访问TG下载](https://t.me/qiuchenlymac/509)                                                             |  ✅  |  ✅  |      版权！版权！NMSL！       |
+| xmind                                      |                                                              [25.01.01061](https://t.me/qiuchenlymac/507)                                                               |  ✅  |  ✅  |      版权！版权！NMSL！       |
+
 
 ## X1a0He维护
 
@@ -105,12 +105,13 @@
 
 ### 其他 Apps
 
-| App                         |                                                                     版本                                                                      | Arm | x86 |  备注   |
-|-----------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------:|:---:|:---:|:-----:|
-| CleanShot                   |                                     [4.6.2](https://updates.getcleanshot.com/v3/CleanShot-X-4.6.2.dmg)                                      |  ✅  |  ✅  |       |
-| Autodesk CAD 2024.1         | [2024.1](https://efulfillment.autodesk.com/NetSWDLD/2024/ACDMAC/51FA17FC-55D6-39BA-8FC8-6C4A49773B94/ESD/Autodesk_AutoCAD_2024.1_macOS.dmg) |  ✅  |  ✅  | 新版本没弄 |
-| Autodesk Maya 2024.2 Update | [2024.2 Update](https://dds.autodesk.com/NetSWDLD/2024/MAYA/F7AB6D63-1270-31AE-8B47-C2FBE41B09F0/SFX/Autodesk_Maya_2024_2_Update_macOS.dmg) |  ✅  |  ✅  | 新版本没弄 |
-| Moment                      |                           [通杀](https://fireball.studio/api/release_manager/downloads/studio.fireball.moment.dmg)                            |  ✅  |  ✅  |       |
+| App                         |                                                                     版本                                                                      | Arm | x86 |       备注       |
+|-----------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------:|:---:|:---:|:--------------:|
+| CleanShot                   |                                     [4.6.2](https://updates.getcleanshot.com/v3/CleanShot-X-4.6.2.dmg)                                      |  ✅  |  ✅  |                |
+| Autodesk CAD 2025.x         | [2025.x](https://trial2.autodesk.com/NetSWDLD/2025/ACDMAC/5B190BA4-3356-3152-AA97-BE2E484F6F3D/ESD/Autodesk_AutoCAD_2025.1_macOS.dmg) |  ✅  |  ✅  | 2025+2026测试版通杀 |
+| Autodesk CAD 2026 英文测试版     |                                                     [访问](https://t.me/qiuchenlymac/530)                                                     |  ✅  |  ✅  |      注入通杀      |
+| Autodesk Maya 2024.2 Update | [2024.2 Update](https://dds.autodesk.com/NetSWDLD/2024/MAYA/F7AB6D63-1270-31AE-8B47-C2FBE41B09F0/SFX/Autodesk_Maya_2024_2_Update_macOS.dmg) |  ✅  |  ✅  |     新版本没弄      |
+| Moment                      |                           [通杀](https://fireball.studio/api/release_manager/downloads/studio.fireball.moment.dmg)                            |  ✅  |  ✅  |                |
 
 ## 其他贡献者
 
@@ -130,20 +131,25 @@
 
 ## Adobes
 
-| Adobe                    | 版本                          | ARM64 | Intel | 特殊说明 全家桶全部支持打开SIP下使用          | 维护者                                       | 维护状态 |
-|:-------------------------|:----------------------------|:-----:|:-----:|:------------------------------|:------------------------------------------|:-----|
-| Adobe PhotoShop          | 25.6                        |  待验证  |   ✅   | PS:Intel上的神经滤镜已经完美可用 ARM的暂时不行 | [QiuChenly](https://github.com/QiuChenly) | ✅    | 
-| Adobe Lightroom          | 7.0 (20230927-2320-8b251c5) |   ✅   |   ✅   | 注入后先点试用 然后过期后可以正常使用           | [QiuChenly](https://github.com/QiuChenly) | ✅    | 
-| Adobe Lightroom Classic  | 13.2 (内部版本号 202402141005)   |   ✅   |   ✅   | 注入后先点试用 然后过期后可以正常使用           | [QiuChenly](https://github.com/QiuChenly) | ✅    | 
-| Adobe Acrobat Pro        | 23.006.20360                |   ✅   |   ✅   |                               | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
-| Adobe Illustrator        | 28.1.0                      |   ✅   |   ❌   | ARM64没有测试过 X86测试过             | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
-| Adobe InCopy 2024        | 19.0.0.151                  |   ✅   |   ❌   | 在M1 Mac Mini 中测试通过            | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
-| Adobe InDesign 2024      | 19.0.0.151                  |   ✅   |   ❌   | 在M1 Mac Mini 中测试通过            | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
-| Adobe Premiere Pro 2024  | 24.0.0                      |   ✅   |   ✅   | 在M1 Mac Mini 中测试通过            | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
-| Adobe After Effects 2024 | 24.0.0                      |   ✅   |   ✅   | 在M1 Mac Mini 中测试通过            | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
-| Adobe Animate 2024       | 24.0                        |   ✅   |   ✅   | 在M1 Mac Mini 中测试通过            | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
-| Adobe Audition 2024      | 24.0.0.46                   |   ✅   |   ✅   | 在M1 Mac Mini 中测试通过            | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
-| Adobe Media Encoder 2024 | 24.0                        |   ✅   |   ✅   | 在M1 Mac Mini 中测试通过            | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
+#### 当前QiuChenly支持的:
+| Adobe                   | 版本             | ARM64 | Intel | 特殊说明 全家桶全部支持打开SIP下使用                   | 维护者                                       | 维护状态 |
+|:------------------------|:---------------|:-----:|:-----:|:---------------------------------------|:------------------------------------------|:-----|
+| Adobe PhotoShop         | 26.3           |   ✅   |   ✅   | 神经滤镜请访问: https://t.me/qiuchenlymac/533 | [QiuChenly](https://github.com/QiuChenly) | ✅    | 
+| Adobe Lightroom         | 8.1            |   ✅   |   ✅   | 无需登录账户可以正常使用                           | [QiuChenly](https://github.com/QiuChenly) | ✅    | 
+| Adobe Lightroom Classic | 14.1.1         |   ✅   |   ✅   | 无需登录账户可以正常使用                           | [QiuChenly](https://github.com/QiuChenly) | ✅    | 
+| Adobe Acrobat Pro       | 2024.005.20320 |   ✅   |   ✅   | 无需登录账户可以正常使用                           | [QiuChenly](https://github.com/QiuChenly) | ✅    | 
+| Adobe Illustrator       | 29.2.1         |   ✅   |   ✅   | 无需登录账户可以正常使用                           | [QiuChenly](https://github.com/QiuChenly) | ✅    | 
+| Adobe InCopy 2024       | 20.1           |   ✅   |   ✅   | 无需登录账户可以正常使用                           | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
+| Adobe InDesign 2024     | 20.1           |   ✅   |   ✅   | 无需登录账户可以正常使用                           | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
+
+#### 暂无计划继续支持的:
+| Adobe                    | 版本                          | ARM64 | Intel | 特殊说明 全家桶全部支持打开SIP下使用                   | 维护者                                       | 维护状态 |
+|:-------------------------|:----------------------------|:-----:|:-----:|:---------------------------------------|:------------------------------------------|:-----|
+| Adobe Premiere Pro 2024  | 24.0.0                      |   ✅   |   ✅   | 在M1 Mac Mini 中测试通过                     | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
+| Adobe After Effects 2024 | 24.0.0                      |   ✅   |   ✅   | 在M1 Mac Mini 中测试通过                     | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
+| Adobe Animate 2024       | 24.0                        |   ✅   |   ✅   | 在M1 Mac Mini 中测试通过                     | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
+| Adobe Audition 2024      | 24.0.0.46                   |   ✅   |   ✅   | 在M1 Mac Mini 中测试通过                     | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
+| Adobe Media Encoder 2024 | 24.0                        |   ✅   |   ✅   | 在M1 Mac Mini 中测试通过                     | [QiuChenly](https://github.com/QiuChenly) | ⚠️   | 
 
 ## 停止维护 ❌
 

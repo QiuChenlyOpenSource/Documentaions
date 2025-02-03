@@ -4,11 +4,12 @@
 
     <build-profile instance="Manual">
         <variables>
-            <download-title>Download</download-title>
-            <download-page>https://github.com/wibus-wee/InjectGUI/releases/latest</download-page>
+            <download-title>访问 InjectLib 仓库</download-title>
+            <download-page>https://github.com/QiuChenly/InjectLib</download-page>
             <showDownloadButton>true</showDownloadButton>
 
             <resizable-sidebar>true</resizable-sidebar>
+            <noindex-content>false</noindex-content>
         </variables>
     </build-profile>
     <variables>
@@ -17,6 +18,6 @@
     <footer>
         <link href="https://t.me/qiuchenlymac">Telegram 频道</link>
         <link href="https://t.me/+f3BWmkjVCzQwYzM1">群组</link>
-        <copyright>2024 QiuChenly Team.</copyright>
+        <copyright>2025 QiuChenly Team.</copyright>
     </footer>
 </buildprofiles>
