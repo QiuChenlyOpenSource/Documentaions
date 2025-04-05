@@ -20,20 +20,12 @@
 
 ## 常规使用 {#general}
 
-> 目前基于 SwiftUI 的 [InjectGUI](https://github.com/wibus-wee/InjectGUI) 已经发布，但还处于快速开发迭代阶段，其中部分功能可能并不稳定。<br/>
-> 尝试 InjectGUI 遇到问题后可以向 Wibus 的仓库中提交 [issues](https://github.com/wibus-wee/InjectGUI/issues)，并回退到命令行注入模式。
-> 
-> Python 版本的 `秋城落叶_启动.command` 脚本目前还只是过渡阶段， 所以如果遇到问题，请向 QuChenly 提交 [issues](report-an-issue.md)。
-> {style="note"}
-
-输入 `y` 自动解决所有问题，打开 App 即可享受。
-
 1. 直接克隆或下载仓库或直接点击下载本项目的 [最新版本 zip](https://github.com/QiuChenly/InjectLib/archive/refs/heads/main.zip)
 2. 解压后打开文件夹，双击`秋城落叶_启动.command`文件并输入你的 Mac 密码。
 3. 当扫描完成后，你需要做的就是:
     - 扫描完成后，依次输入 `y/n` 决定是否破解当前扫描到的 App。
-    - 如果不是需要注入的 App，按 <shortcut>⏎ Enter</shortcut> 跳过。
-    - 输入 `y` 自动解决所有问题，打开 App 即可享受。
+    - 默认为`n`, 如果不是需要注入的 App，按 <shortcut>⏎ Enter</shortcut> 即可跳过此 App, 无需输入n。
+    - 选择你的目标App, 输入 `y` 自动解决所有问题，打开 App 即可享受。
 
 ### 对于程序员或喜欢研究的小伙伴 {#manual}
 
@@ -74,5 +66,5 @@ python3 main.py
 - [Adobe](adobe.md)
 - [Setapp](setapp.md)
 - [Sublime](sublime.md)
-- [Parallels Desktop 19](parallels-desktop-19.md)
+- [Parallels Desktop](parallels-desktop-19.md)
 - [Emby Server](emby-server.md)
