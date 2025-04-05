@@ -4,7 +4,9 @@
 
 ## App 自动更新提示 Sign 不匹配 {#auto-update-sign-mismatch}
 
-手动下载最新版本：[https://store.setapp.com/updates/beta.xml](https://store.setapp.com/updates/beta.xml)
+当前推荐版本: https://dl.devmate.com/com.setapp.DesktopClient/99/1739545743/Setapp-99.zip
+
+你也可以手动下载最新版本，但不稳定：[https://store.setapp.com/updates/beta.xml](https://store.setapp.com/updates/beta.xml)
 
 ## 如何登录 {#how-to-login}
 
@@ -20,7 +22,7 @@
             <li>使用 <a href="https://download.nektony.com/pro-support/v3/app-cleaner/update/update.xml">App Cleaner & Uninstaller</a> 彻底卸载 Setapp，切勿使用 BuhoCleaner！</li>
             <li>前往上述 <a href="https://store.setapp.com/updates/beta.xml">SetApp 更新地址</a> 下载最新版本。</li>
             <li>下载完成后，将 Setapp 拖入 Application 中，不要打开，不要打开，不要打开！</li>
-            <li>运行注入，Setapp 和 SetappAgent 都要注入，只要看到 Setapp 开头的就需要注入！</li>
+            <li>运行注入: `[com.setapp.DesktopClient/Setapp] - [3.43.3]`.包名为com.setapp.DesktopClient别看错了。</li>
             <li>注入完成后打开，如果提示损坏，请查看 <a href="file-is-damaged.md">FAQ</a></li>
             <li>如果看到 QiuChenly 弹窗，说明成功，如果没有看到，说明注入失败。</li>
         </ol>
@@ -30,7 +32,7 @@
             <li>在 Setapp 里找到右上角的头像，点击后选择退出。</li>
             <li>打开 <code>~/Library/Application Support</code> 文件夹。</li>
             <li>找到 Setapp 文件夹，<shortcut>⌘ Command + ⌫ Delete</shortcut> 删除文件夹。</li>
-            <li>运行注入，Setapp 和 SetappAgent 都要注入，只要看到 Setapp 开头的就需要注入！</li>
+            <li>运行注入: `[com.setapp.DesktopClient/Setapp] - [3.43.3]`.包名为com.setapp.DesktopClient别看错了。</li>
             <li>注入完成后打开，如果提示损坏，请查看 <a href="file-is-damaged.md">FAQ</a></li>
             <li>如果看到 QiuChenly 弹窗，说明成功，如果没有看到，说明注入失败。</li>
         </ol>
