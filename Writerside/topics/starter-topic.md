@@ -19,8 +19,8 @@ QiuChenly Team开源项目成员，参与贡献代码的成员（排名不分前
 > ...还有许多许多人，实在难以一一列出，在此表示深深的感谢！
 
 
-<a href="https://github.com/QiuChenly/InjectLib/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=QiuChenly/InjectLib" />
+<a href="https://github.com/QiuChenly/CoreInject/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=QiuChenly/CoreInject" />
 </a>
 
 ## 文档编撰 & 致谢
@@ -37,5 +37,5 @@ QiuChenly Team开源项目成员，参与贡献代码的成员（排名不分前
 ## 联系我们
 
 [Telegram 频道](https://t.me/qiuchenlymac)  \
-[Telegram 群组](https://t.me/+f3BWmkjVCzQwYzM1)  \
+[Telegram 群组](https://t.me/+VvqTr-2EFaZhYzA1)  \
 [个人 Twitter](https://twitter.com/QiuChenly)  

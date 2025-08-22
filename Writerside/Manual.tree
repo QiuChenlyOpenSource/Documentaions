@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="Manual"
-                 name="InjectLib"
+                 name="CoreInject"
                   start-page="getting-started.md">
 
     <toc-element topic="starter-topic.md"/>

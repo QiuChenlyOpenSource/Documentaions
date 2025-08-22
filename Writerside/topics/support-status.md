@@ -1,5 +1,13 @@
 # App 支持状态一览表
 
+## 项目信息
+
+- **项目名称**: InjectShell
+- **当前版本**: v3.0
+- **最低系统要求**: macOS 10.13 (High Sierra)
+- **编译SDK**: macOS 14.0
+- **目标平台**: macOS 10.13+
+
 ## 主要的App
 
 - MAS: App 需要在 Mac App Store 中下载
@@ -53,14 +61,14 @@
 | Macs Fan Control | [Latest](https://crystalidea.com/downloads/macsfancontrol.zip)                                                                                                           |  ✓  |  ✓  |  ✓  |                                                                                                       |
 | DevUtils         | [Latest](https://devutils.com/archives/appcast.xml)                                                                                                                      |  ✓  |  ✓  |  ✓  | Functions normally. <br />Activation status cannot be modified.                                       |
 | MP3Tag           | [Latest](https://updates.mp3tag.app/appcast.xml)                                                                                                                         |  ✓  |  ✓  |  ✓  | Enter the serial number at random                                                                     |
-| Bartender 5      | [Latest](https://www.macbartender.com/B2/updates/TestAppcastB5.xml)                                                                                                      |  ✓  |  ✓  |  ✓  |                                                                                                       |
+| Bartender 5      | [5.3.6, 5.3.8](https://www.macbartender.com/B2/updates/TestAppcastB5.xml)                                                                                              |  ✓  |  ✓  |  ✓  |                                                                                                       |
 | Live Wallpaper   | [MAS](https://apps.apple.com/cn/app/%E8%8A%B1%E8%A6%8B-4k%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8%E5%BC%95%E6%93%8E/id1456235760?mt=12)                                      |  ✓  |  ✓  |  ✓  |                                                                                                       |
 | Paste            | 4.1.2                                                                                                                                                                    |  ✓  |  ✓  |  ✓  | New algorithm, crack!                                                                                 |
 | TablePlus        | [Latest](https://tableplus.com/release/osx/tableplus_latest)                                                                                                             |  ✓  |  ✓  |  ✓  |                                                                                                       |
 | Transmit 5       | 5.9.2                                                                                                                                                                    |  ?  |  ✓  |  ✓  | Need to download from Mac App Store                                                                   |
 | Widgetter        | [MAS](https://apps.apple.com/cn/app/widgetter-%E5%B0%8F%E5%B7%A5%E5%85%B7-%E6%A1%8C%E9%9D%A2%E5%A3%81%E7%BA%B8-%E4%B8%BB%E9%A2%98-%E5%B1%8F%E4%BF%9D/id1553223588?mt=12) |  ✓  |  ✓  |  ✓  | Need to download from Mac App Store                                                                   |
 | QCAD-Intel       | [3.28.2](https://www.qcad.org/archives/qcad/qcad-3.28.2-trial-macos-10.14-13.dmg)                                                                                        |  ?  |  ✗  |  ✓  |                                                                                                       |
-| Bandizip 365     | Latest                                                                                                                                                                   |  ✓  |  ✓  |  ✓  | Subscription Version                                                                                  |
+| Bandizip 365     | 7.34                                                                                                                                                                     |  ✓  |  ✓  |  ✓  | Subscription Version                                                                                  |
 | Bandizip         | 7.28                                                                                                                                                                     |  ?  |  ✓  |  ✓  | Buyout Edition                                                                                        |
 | Typora           | [Latest](https://download.typora.io/mac/Typora.dmg)                                                                                                                      |  ✓  |  ✓  |  ✓  |                                                                                                       |
 | Medis            | [3100](https://api.getmedis.com/medis-latest.zip)                                                                                                                        |  ?  |  ✓  |  ✓  | Only supports 3100                                                                                    |
@@ -76,22 +84,75 @@
 | Rhino8           | [8.4-?](https://www.rhino3d.com/)                                                                                                                                        |  ?  |  ✓  |  ✓  | x86 not tested                                                                                        |
 | Shottr           | [Latest](https://shottr.cc/)                                                                                                                                             |  ✓  |  ✓  |  ✓  | Enter any license key to activate                                                                     |
 
+### 其他重要应用
+
+| App                | Ver                                   | Arm | x86 | Notes                                                                                    | Status |
+|--------------------|---------------------------------------|:---:|:---:|------------------------------------------------------------------------------------------|:------:|
+| iMazing           | 3.2.1-3.3.1                           |  ✓  |  ✓  | 支持多个版本                                                                              |   ✓    |
+| Screens 5         | 5.5.12, 5.5.15                        |  ✓  |  ✓  | 支持多个版本                                                                              |   ✓    |
+| Stash             | 3.1.0, 4.0.0                          |  ✓  |  ✓  | 支持多个版本                                                                              |   ✓    |
+| SenPlayer         | 5.6.0-5.6.5                           |  ✓  |  ✓  | 支持多个版本                                                                              |   ✓    |
+| MarginNote        | 3.7.29                                |  ✓  |  ✓  | 支持特定版本                                                                              |   ✓    |
+| DockLock Lite     | 1.3.4                                 |  ✓  |  ✓  | 支持特定版本                                                                              |   ✓    |
+| MarginStudy Easy  | 4.1.18                                |  ✓  |  ✓  | 支持特定版本                                                                              |   ✓    |
+
+### 虚拟化工具
+
+| App                | Ver                                   | Arm | x86 | Notes                                                                                    | Status |
+|--------------------|---------------------------------------|:---:|:---:|------------------------------------------------------------------------------------------|:------:|
+| Parallels Desktop  | 20.3.0-20.4.1                        |  ✓  |  ✓  | 支持多个版本   |   ✓    |
+
 ### Adobes
 
 | App                | Ver                                   | Arm | x86 | Notes                                                                                    | Status |
 |--------------------|---------------------------------------|:---:|:---:|------------------------------------------------------------------------------------------|:------:|
-| PhotoShop          | 25.6                                  |  ?  |  ✓  | Neural filters on Intel are perfectly usable, but not on ARM yet                         |   ✓    |
-| Lightroom          | 7.0 <br />build.20230927-2320-8b251c5 |  ✓  |  ✓  | After injection, click on the trial first, then you can use it normally after it expires |   ✓    |
-| Lightroom Classic  | 13.2<br />build.202402141005          |  ✓  |  ✓  | After injection, click on the trial first, then you can use it normally after it expires |   ✓    |
-| Acrobat Pro        | 23.006.20360                          |  ✓  |  ✓  |                                                                                          |   !    |
-| Illustrator        | 28.1.0                                |  ✓  |  ✗  | ARM64 not tested X86 tested                                                              |   !    |
-| InCopy 2024        | 19.0.0.151                            |  ✓  |  ✗  | Tested in M1 Mac Mini                                                                    |   !    |
-| InDesign 2024      | 19.0.0.151                            |  ✓  |  ✗  | Tested in M1 Mac Mini                                                                    |   !    |
-| Premiere Pro 2024  | 24.0.0                                |  ✓  |  ✓  | Tested in M1 Mac Mini                                                                    |   !    |
-| After Effects 2024 | 24.0.0                                |  ✓  |  ✓  | Tested in M1 Mac Mini                                                                    |   !    |
-| Animate 2024       | 24.0                                  |  ✓  |  ✓  | Tested in M1 Mac Mini                                                                    |   !    |
-| Audition 2024      | 24.0.0.46                             |  ✓  |  ✓  | Tested in M1 Mac Mini                                                                    |   !    |
-| Media Encoder 2024 | 24.0                                  |  ✓  |  ✓  | Tested in M1 Mac Mini                                                                    |   !    |
+| PhotoShop          | 通杀                                  |  ✓  |  ✓  | 支持所有版本                                               |   ✓    |
+| Lightroom          | 通杀                                 |  ✓  |  ✓  | 支持所有版本                                                                          |   ✓    |
+| Lightroom Classic  | 通杀                                |  ✓  |  ✓  | 支持所有版本                                                                          |   ✓    |
+| Acrobat Pro        | 通杀                              |  ✓  |  ✓  | 支持所有版本                                                                   |   ✓    |
+| Illustrator        | 通杀                                 |  ✓  |  ✓  | 支持所有版本                                                                                |   ✓    |
+| InCopy             | 通杀                              |  ✓  |  ✓  | 支持所有版本                                                                                |   ✓    |
+| InDesign           | 通杀                            |  ✓  |  ✓  | 支持所有版本                                                                              |   ✓    |
+| Premiere Pro       | 通杀                            |  ✓  |  ✓  | 支持所有版本                                                                              |   ✓    |
+| After Effects      | 通杀                            |  ✓  |  ✓  | 支持所有版本                                                                              |   ✓    |
+| Animate            | 通杀                              |  ✓  |  ✓  | 支持所有版本                                                                              |   ✓    |
+| Audition           | 通杀                                 |  ✓  |  ✓  | 支持所有版本                                                                              |   ✓    |
+| Media Encoder      | 通杀                            |  ✓  |  ✓  | 支持所有版本                                                                              |   ✓    |
+| Distiller          | 通杀                              |  ✓  |  ✓  | 支持所有版本                                                                  |   ✓    |
+
+#### Adobe 产品使用说明
+
+**重要提示：**
+1. **无需试用** - Adobe产品安装后直接注入即可使用，不需要先试用
+2. **无需登录账户** - 不要登录任何Adobe账户，直接使用即可
+3. **支持所有版本** - 包括最新版本和未来版本，通杀所有Adobe产品
+4. **离线使用** - 注入后可以完全离线使用，无需网络连接
+
+**使用方法：**
+1. 下载并安装Adobe产品（任意版本）
+2. 使用InjectLib注入对应产品
+3. 直接打开使用，无需任何额外操作
+
+**注意事项：**
+- 不要登录Adobe Creative Cloud账户
+- 不要点击试用按钮
+- 注入后即可正常使用所有功能
+- 支持神经滤镜等高级功能（需要离线安装）
+
+### Autodesk 系列应用
+
+| App                | Ver                                   | Arm | x86 | Notes                                                                                    | Status |
+|--------------------|---------------------------------------|:---:|:---:|------------------------------------------------------------------------------------------|:------:|
+| Maya               | 2024/2026                            |  ✓  |  ✓  | 支持多个版本，注入主程序                                                                  |   ✓    |
+| AutoCAD            | 2024/2025/2026                       |  ✓  |  ✓  | 支持多个版本，注入主程序                                                                  |   ✓    |
+
+### 开发工具
+
+| App                | Ver                                   | Arm | x86 | Notes                                                                                    | Status |
+|--------------------|---------------------------------------|:---:|:---:|------------------------------------------------------------------------------------------|:------:|
+| Hopper Disassembler| 5.16.0-5.18.1                        |  ✓  |  ✓  | 仅限QiuChenly特供版本                                                                   |   ✓    |
+| IDA Pro            | 9.0.241217, 9.1.250226               |  ✓  |  ✓  | 需要额外脚本处理                                                                          |   ✓    |
+| IDA Free           | 最新版本                              |  ✓  |  ✓  | 需要额外脚本处理                                                                          |   ✓    |
 
 ## 由 X1a0He 维护
 

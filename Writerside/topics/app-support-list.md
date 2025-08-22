@@ -7,9 +7,9 @@
 - **MAS:** App需要在 Mac App Store 中下载
 - **通杀:** 指在一定范围内的版本都可以使用这个破解方法。如果失效请[向我们报告](report-an-issue.md)。
 - **版本号:** 仅用于参考，表示支持的最低版本，因为部分 App 任何版本都是通杀的。
-- **Telegram 资讯发布群:** https://t.me/+f3BWmkjVCzQwYzM1
+- **Telegram 资讯发布群:** https://t.me/+VvqTr-2EFaZhYzA1
 - **Telegram 资讯发布频道:** https://t.me/qiuchenlymac
-- 本页面App如有失效请在github issues中提单。欢迎各位帮忙补充本文档的不足之处，由于开发者的个人能力实在微薄，难免疏漏。
+- 本页面App如有失效请在github issues中提单。由于开发者的个人能力实在微薄，难免疏漏，欢迎各位帮忙补充本文档的不足之处。
 
 > **版本号不一定实时更新。**
 >
@@ -26,40 +26,61 @@
 
 | App       | 版本                                                                                                                              | Arm | x86 | 备注 |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------|-----|-----|----|
-| Infuse    | [MAS Latest](https://apps.apple.com/cn/app/infuse-%E6%99%BA%E8%83%BD%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8/id1136220934) | ✅   | ✅   | 懒  |
-| SenPlayer | 应用商店 5.2.2                                                                                                                      | ✅   | ✅   |    |
+| Infuse    | [MAS Latest](https://apps.apple.com/cn/app/infuse-%E6%99%BA%E8%83%BD%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8/id1136220934) | ✅   | ✅   |    |
+| SenPlayer | 5.6.0-5.6.5                                                                                                                     | ✅   | ✅   |    |
 
 ### Navicat Apps
 
-| App                   |   版本   | 通杀 | Arm | x86 |                                          备注                                          |
-|-----------------------|:------:|:--:|:---:|:---:|:------------------------------------------------------------------------------------:|
-| Navicat Premium       | 17.2.4 | ✅  |  ✅  |  ✅  |  [MAS Latest](https://apps.apple.com/cn/app/navicat-premium-16/id1594061654?mt=12)   |
-
-> 注意:
-> 1. Navicat 17.2.4(MAS打包zip直装破解 无需注入)下载: https://t.me/qiuchenlymac/591
+| App             |   版本   | 通杀 | Arm | x86 |  备注  |
+|-----------------|:------:|:--:|:---:|:---:|:----:|
+| Navicat Premium | 官网版本通杀 | ✅  |  ✅  |  ✅  | 官网版本 |
 
 ### ProxyMan Apps
 
 本app将会单独发布破解后的dmg。
 
-| App      |    版本    | 通杀 | Arm | x86 |        备注         |
-|----------|:--------:|:--:|:---:|:---:|:-----------------:|
-| ProxyMan | Setapp版本 | ✅  | ✅️  |  ✅  | 用Setapp版本进行注入破解即可 |
+| App      |     版本      | 通杀 | Arm | x86 |   备注    |
+|----------|:-----------:|:--:|:---:|:---:|:-------:|
+| ProxyMan | 官网/Setapp版本 | ✅  | ✅️  |  ✅  | 官网版一并支持 |
 
 ### Office Apps
 
-| App        |   版本    | 通杀 | Arm | x86 |                                      备注                                      |
-|------------|:-------:|:--:|:---:|:---:|:----------------------------------------------------------------------------:|
-| Word       | 16.93.1 | ✅  | ✅️  |  ✅  |    [下载地址](https://apps.apple.com/cn/app/microsoft-word/id462054704?mt=12)    |
-| Excel      |  16.93  | ✅  |  ✅  |  ✅  |   [下载地址](https://apps.apple.com/cn/app/microsoft-excel/id462058435?mt=12)    |
-| PowerPoint | 16.93.2 | ✅  |  ✅  |  ✅  | [下载地址](https://apps.apple.com/cn/app/microsoft-powerpoint/id462062816?mt=12) |
+| App        |  版本   | 通杀 | Arm | x86 |                                      备注                                      |
+|------------|:-----:|:--:|:---:|:---:|:----------------------------------------------------------------------------:|
+| Word       | 商店最新版 | ✅  | ✅️  |  ✅  |    [下载地址](https://apps.apple.com/cn/app/microsoft-word/id462054704?mt=12)    |
+| Excel      | 商店最新版 | ✅  |  ✅  |  ✅  |   [下载地址](https://apps.apple.com/cn/app/microsoft-excel/id462058435?mt=12)    |
+| PowerPoint | 商店最新版 | ✅  |  ✅  |  ✅  | [下载地址](https://apps.apple.com/cn/app/microsoft-powerpoint/id462062816?mt=12) |
+
+#### office MAS商店版本食用须知
+
+1. 由于采用Office内部代码逻辑错误来通杀激活所有版本，所以存在一个问题：打开后无法关闭/退出三件套，但保存文件等功能不受影响。后面有时间优化。
 
 ### 违法翻墙
 
-| App   | 版本                                                               | Arm | x86 | 备注                                               |
-|-------|------------------------------------------------------------------|----:|----:|--------------------------------------------------|
-| Stash | [3.1.0](https://mac-release-static.stash.ws/Stash-build-372.zip) |   ✅ |   ✅ | [更新地址](https://mac-release.stash.ws/appcast.xml) |
-| Surge | [2838](https://t.me/qiuchenlymac/441)                            |   ✅ |   ✅ | 直接下载破解好的压缩包使用: https://t.me/qiuchenlymac/441     |
+| App   | 版本                                                                      | Arm | x86 | 备注                                               |
+|-------|-------------------------------------------------------------------------|----:|----:|--------------------------------------------------|
+| Stash | [3.1.0, 4.0.0](https://mac-release-static.stash.ws/Stash-build-372.zip) |   ✅ |   ✅ | [更新地址](https://mac-release.stash.ws/appcast.xml) |
+| Surge | Surge 5/6 所有版本                                                          |   ✅ |   ✅ | 通杀                                               |
+
+#### Surge须知:
+
+1. 如果你关闭SIP，则可以使用“上帝之眼”来自动在后台激活启动Surge，可以使用增强模式，通杀所有最新版。
+   但这种方式有一定的优缺点:
+    1. 支持最新版Surge 6
+    2. 支持使用增强模式接管系统
+
+   缺点:
+    1. 偶尔会打不开Surge, 强制退出再打开就可以了。(少见)
+2. 如果你不想关闭SIP，你可以用本仓库代码直接注入Surge，但版本有两个选择：
+    1. 使用Surge 2838版本, 支持增强模式。
+    2. 使用Surge 6最新版本, 无法使用增强模式。
+
+   根据你的选择不同，你需要另有取舍。
+
+有关上帝之眼的安装信息，请访问:
+解压的仓库zip文件夹/上帝之眼/readme.md 文件查阅安装方式 或
+访问[在线镜像](https://git.sr.ht/~qiuchenly/CoreInject/tree/c7030974c23c1b9541827af865afab7b808656fe/item/%E4%B8%8A%E5%B8%9D%E4%B9%8B%E7%9C%BC/readme.md)
+网页.
 
 ### Other Apps
 
@@ -68,14 +89,14 @@
 | Macs Fan Control                           |                                                     [Latest](https://crystalidea.com/downloads/macsfancontrol.zip)                                                      |  ✅  |  ✅  |                                                    |
 | DevUtils                                   |                                                           [Latest](https://devutils.com/archives/appcast.xml)                                                           |  ✅  |  ✅  |                    功能可用 激活状态懒得改                    |
 | MP3Tag                                     |                                                          [1.9.2](https://updates.mp3tag.app/Mp3tag-1.9.2.zip)                                                           |  ✅  |  ✅  |                      序列号随便输入                       |
-| Bartender 5                                |                                                   [Latest](https://www.macbartender.com/B2/updates/TestAppcastB5.xml)                                                   |  ✅  |  ✅  |                                                    |
+| Bartender 5                                |                                                [5.3.6, 5.3.8](https://www.macbartender.com/B2/updates/TestAppcastB5.xml)                                                |  ✅  |  ✅  |                                                    |
 | 花见壁纸                                       |                 [Latest](https://apps.apple.com/cn/app/%E8%8A%B1%E8%A6%8B-4k%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8%E5%BC%95%E6%93%8E/id1456235760?mt=12)                  |  ✅  |  ✅  |                                                    | 
 | Paste                                      |                                                                                  4.1.2                                                                                  |  ✅  |  ✅  |                      全新算法，杀！                       |
 | TablePlus                                  |                                                        [通杀](https://tableplus.com/release/osx/tableplus_latest)                                                         |  ✅  |  ✅  |                                                    |
 | Transmit 5                                 |                                                                                  5.9.2                                                                                  |  ✅  |  ✅  |                   需要从App Store下载                   |
 | Widgetter                                  | [通杀](https://apps.apple.com/cn/app/widgetter-%E5%B0%8F%E5%B7%A5%E5%85%B7-%E6%A1%8C%E9%9D%A2%E5%A3%81%E7%BA%B8-%E4%B8%BB%E9%A2%98-%E5%B1%8F%E4%BF%9D/id1553223588?mt=12) |  ✅  |  ✅  |                    MAS下载 激活全部功能                    |
 | QCAD-Intel                                 |                                            [3.28.2](https://www.qcad.org/archives/qcad/qcad-3.28.2-trial-macos-10.14-13.dmg)                                            |  ❌  |  ✅  |                       ARM懒得弄                       |
-| Bandizip 365                               |                                                                                   通杀                                                                                    |  ✅  |  ✅  |                        订阅版                         |
+| Bandizip 365                               |                                                                                  7.34                                                                                   |  ✅  |  ✅  |                        订阅版                         |
 | Bandizip                                   |                                                                                  7.28                                                                                   |  ✅  |  ✅  |                        买断版                         |
 | Typora                                     |                                                             [通杀](https://download.typora.io/mac/Typora.dmg)                                                             |  ✅  |  ✅  |                                                    |
 | Medis                                      |                                                            [3100](https://api.getmedis.com/medis-latest.zip)                                                            |  ✅  |  ✅  |                      仅支持3100                       |
@@ -92,12 +113,72 @@
 | MacFanControl Windows 版本                   |                                                                      https://t.me/qiuchenlymac/590                                                                      |  ❌  |  ✅  |               这是windows下的直装破解版本 别下错了               |
 | Final Cut Pro Trial                        |                [11.0.1](https://secure-appldnld.apple.com/Final_Cut_Pro_X/072-44727-20250131-13ba994a-32a9-412f-9660-8512c1592a94/FinalCutProTrial.dmg)                 |  ✅  |  ✅  |                      后续版本通杀破解                      |
 | Logic Pro                                  |                     [11.1.2](https://secure-appldnld.apple.com/LogicPro/052-95157-20250122-9153EDA5-989A-44DC-AFA4-D82D95708122/LogicProTrial.dmg)                      |  ✅  |  ✅  |                      后续版本通杀破解                      |
+| Parallels Desktop                          |                                                             [20.3.0-20.4.1](https://t.me/qiuchenlymac/568)                                                              |  ✅  |  ✅  |    支持版本：20.3.0, 20.3.1, 20.3.2, 20.4.0, 20.4.1     |
 | 亿图图示 EdrawMax                              |                                              [14.1.3](https://cc-download.edrawsoft.cn/cbs_down/edraw-max_cn_full5381.dmg)                                              |  ✅  |  ✅  |                                                    |
 | 亿图脑图 MindMaster                            |                                             [12.2.4](https://cc-download.edrawsoft.cn/cbs_down/mindmaster_cn_full5379.dmg)                                              |  ✅  |  ✅  |                                                    |
 | 亿图项目管理软件 EdrawProj                         |                                              [3.7.1](https://cc-download.edrawsoft.cn/cbs_down/edrawproj_cn_full5383.dmg)                                               |  ✅  |  ✅  |                                                    |
 | CleanMyMac 5                               |                                                                                Setapp版本                                                                                 |  ✅  |  ✅  | 用Setapp下载再注入，这是注入说明: https://t.me/qiuchenlymac/577 |
 | TablePlus                                  |                                                                                Setapp版本                                                                                 |  ✅  |  ✅  |                    用Setapp下载再注入                    |
 | iStat Menus                                |                                                                              Setapp版本 7.10                                                                              |  ✅  |  ✅  | 用Setapp下载再注入，这是注入说明: https://t.me/qiuchenlymac/579 |
+
+### Adobe 系列应用
+
+| App               | 版本                                                                    | Arm | x86 | 备注     |
+|-------------------|-----------------------------------------------------------------------|-----|-----|--------|
+| Photoshop         | [通杀](https://www.adobe.com/products/photoshop.html)                   | ✅   | ✅   | 支持所有版本 |
+| Illustrator       | [通杀](https://www.adobe.com/products/illustrator.html)                 | ✅   | ✅   | 支持所有版本 |
+| After Effects     | [通杀](https://www.adobe.com/products/aftereffects.html)                | ✅   | ✅   | 支持所有版本 |
+| Premiere Pro      | [通杀](https://www.adobe.com/products/premiere.html)                    | ✅   | ✅   | 支持所有版本 |
+| Lightroom         | [通杀](https://www.adobe.com/products/photoshop-lightroom.html)         | ✅   | ✅   | 支持所有版本 |
+| Lightroom Classic | [通杀](https://www.adobe.com/products/photoshop-lightroom-classic.html) | ✅   | ✅   | 支持所有版本 |
+| Media Encoder     | [通杀](https://www.adobe.com/products/media-encoder.html)               | ✅   | ✅   | 支持所有版本 |
+| InDesign          | [通杀](https://www.adobe.com/products/indesign.html)                    | ✅   | ✅   | 支持所有版本 |
+| InCopy            | [通杀](https://www.adobe.com/products/incopy.html)                      | ✅   | ✅   | 支持所有版本 |
+| Audition          | [通杀](https://www.adobe.com/products/audition.html)                    | ✅   | ✅   | 支持所有版本 |
+| Animate           | [通杀](https://www.adobe.com/products/animate.html)                     | ✅   | ✅   | 支持所有版本 |
+| Acrobat Pro       | [通杀](https://www.adobe.com/products/acrobat-pro.html)                 | ✅   | ✅   | 支持所有版本 |
+| Distiller         | [通杀](https://www.adobe.com/products/acrobat/distiller.html)           | ✅   | ✅   | 支持所有版本 |
+
+#### Adobe 产品使用说明
+
+**重要提示：**
+1. **无需试用** - Adobe产品安装后直接注入即可使用，不需要先试用
+2. **无需登录账户** - 不要登录任何Adobe账户，直接使用即可
+3. **支持所有版本** - 包括最新版本和未来版本，通杀所有Adobe产品
+4. **离线使用** - 注入后可以完全离线使用，无需网络连接
+
+**使用方法：**
+1. 下载并安装Adobe产品（任意版本）
+2. 使用InjectLib注入对应产品
+3. 直接打开使用，无需任何额外操作
+
+**注意事项：**
+- 不要登录Adobe Creative Cloud账户
+- 不要点击试用按钮
+- 注入后即可正常使用所有功能
+- 支持神经滤镜等高级功能（需要离线安装）
+
+### Autodesk 系列应用
+
+| App     | 版本                                                                     | Arm | x86 | 备注             |
+|---------|------------------------------------------------------------------------|-----|-----|----------------|
+| Maya    | [2024/2026版本](https://www.autodesk.com/products/maya/overview)         | ✅   | ✅   | 支持多个版本，需要注入主程序 |
+| AutoCAD | [2024/2025/2026版本](https://www.autodesk.com/products/autocad/overview) | ✅   | ✅   | 支持多个版本，需要注入主程序 |
+
+### 开发工具
+
+| App                 | 版本                                                      | Arm | x86 | 备注              |
+|---------------------|---------------------------------------------------------|-----|-----|-----------------|
+| Hopper Disassembler | [5.16.0-5.18.1](https://hopperapp.com/)                 | ✅   | ✅   | 仅限QiuChenly特供版本 |
+| IDA Pro             | [9.0.241217, 9.1.250226](https://hex-rays.com/ida-pro/) | ✅   | ✅   | 需要额外脚本处理        |
+| IDA Free            | [最新版本](https://hex-rays.com/ida-free/)                  | ✅   | ✅   | 需要额外脚本处理        |
+
+### 屏幕录制工具
+
+| App            | 版本                                              | Arm | x86 | 备注       |
+|----------------|-------------------------------------------------|-----|-----|----------|
+| ScreenSage Pro | [最新版本](https://screensage.app/)                 | ✅   | ✅   | 支持所有版本   |
+| Camtasia 2023  | [最新版本](https://www.techsmith.com/camtasia.html) | ✅   | ✅   | 需要额外脚本处理 |
 
 ## X1a0He维护
 
@@ -134,8 +215,8 @@
 
 ## 其他贡献者
 
-| App      | 版本                                                                                 | ARM64 | Intel | 备注 | 维护者                                            |
-|----------|------------------------------------------------------------------------------------|------:|------:|----|------------------------------------------------|
+| App | 版本 | ARM64 | Intel | 备注 | 维护者 |
+|-----|----|------:|------:|----|-----|
 
 ## SetApp
 
@@ -148,7 +229,9 @@
 ## Adobes
 
 #### 当前QiuChenly支持的:
+
 需要注意:
+
 1. 不要登录自己账户。
 2. PhotoShop神经滤镜可以离线安装使用。使用方法：https://t.me/qiuchenlymac/533
 3. 所有版本可以离线使用。
