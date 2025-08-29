@@ -39,14 +39,7 @@ remote: Total 584 (delta 130), reused 142 (delta 105), pack-reused 375
 处理 delta 中: 100% (303/303), 完成.
 ```
 
-现在 CoreInject 已经被克隆到你尊贵的 Mac 上了，通过以下命令即可直接运行注入。
-
-```Bash
-cd CoreInject/NativeInject
-sudo ./CoreInject
-```
-
-或者直接运行command文件运行:
+现在 CoreInject 已经被克隆到你尊贵的 Mac 上了，直接运行command文件运行:
 
 ```Bash
 秋城落叶_启动.command
