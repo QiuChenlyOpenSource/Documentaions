@@ -36,15 +36,3 @@ sudo codesign --force --deep --sign - /Applications/Application.app
 ## 右键打开
 
 在 Finder 中找到 .app 文件，按住 <shortcut>⌥ option</shortcut> 并 <shortcut>右键单击</shortcut>，在弹出的菜单中单击 `打开`
-
-## 禁用 Gatekeeper
-
-<resource src="gatekeeper-killer.mobileconfig"/>
-
-下载后在 `系统设置` → `已下载的配置文件` → `Gatekeeper Killer` → `安装…` 安装即可
-
-### 安装此配置文件后将修改的配置： {#configurations-will-be-modified, collapsible="true"}
-- 安全性 `com.apple.security`
-    - 禁用 “自动重新启用 Gatekeeper”
-- 系统策略：控制 `com.apple.systempolicy.control`
-    - 禁用 “启用 Gatekeeper”
