@@ -39,3 +39,35 @@
 ![adobe-this-is-non-genuine-app-noshadow.png](adobe-this-is-non-genuine-app-noshadow.png){width="500"}
 
 早就修复这个问题了，你要是还遇到说明你没用最新版本代码。
+
+## Apple无法验证“InstallAdobe.command”是否包含可能危害Mac安全或泄漏隐私的恶意软件。
+![image_8.png](image_8.png)
+这是因为从网络上下载的脚本导致的。
+
+解决办法:
+1. 点击完成
+2. 打开设置
+3. 找到安全与隐私
+4. ![image_9.png](image_9.png)
+   点击仍要打开
+5. ![image_10.png](image_10.png)
+   提示"Apple无法验证其是否包含可能危害Mac安全或泄漏隐私的恶意软件。除非你确定其来源可靠，否则请勿打开。",不管他，点击"仍要打开"
+6. ![image_11.png](image_11.png)
+   输入macOS密码认证即可。
+
+# 安装Adobe Installer 离线产品部署
+![image_12.png](image_12.png)
+由于需要sudo权限，提示Password:时请输入你的Mac密码。
+
+1. 选择你需要安装的产品（这取决于你下载的离线安装包中有哪些版本 ）
+2. 选择你需要的语言（这取决于打包者的下载行为，qiuchenly建议下载时直接下载所有语言包）
+3. 开始安装
+   ![image_13.png](image_13.png)
+   注意, 出现下述内容是Adobe在检查App文件完整性, 正常现象无需理会:
+   ```bash
+   Scan completed and software is allowed by system policy.
+   Progress: 109695216/109695216
+   Scan completed and software is allowed by system policy.
+   ```
+
+
