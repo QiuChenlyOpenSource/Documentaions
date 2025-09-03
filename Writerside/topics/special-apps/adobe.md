@@ -64,6 +64,21 @@
    就行了。
 3. 如果没有反应,那就参考"问题7"中在设置里仍要打开即可。
 
+## 问题9 “Adobe Illustrator 2025”已损坏，无法打开。 / “xxxx”已损坏，无法打开。
+![image_16.png](image_16.png)
+细心的读者会发现与问题8不一样，没有打开按钮。<br/>
+解决方案:
+1. 点击 好 按钮。
+2. ![image_17.png](image_17.png)
+   首先打开设置，找到安全与隐私。<br/>
+   找到 安全性 , 点击 仍要打开 按钮.
+3. ![image_18.png](image_18.png)
+   输入管理员密码认证。
+4. ![image_19.png](image_19.png)
+   出现熟悉的界面, 点击"打开"即可正常运行.
+5. ![image_20.png](image_20.png)
+   成功打开
+
 # 安装Adobe Installer 离线产品部署
 ![image_12.png](image_12.png)
 由于需要sudo权限，提示Password:时请输入你的Mac密码。
