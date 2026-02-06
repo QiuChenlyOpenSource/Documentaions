@@ -29,7 +29,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: vitepress
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build docs
         working-directory: vitepress

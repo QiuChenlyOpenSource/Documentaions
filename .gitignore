@@ -4,3 +4,4 @@ Writerside/.DS_Store
 node_modules
 vitepress/docs/.vitepress/dist
 vitepress/docs/.vitepress/cache
+pnpm-lock.yaml
