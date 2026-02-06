@@ -14,6 +14,7 @@ const prod = !!process.env.NETLIFY
 
 export default defineConfig({
   title: 'QiuChenly App Store',
+  base: '/Documentaions/',
 
   rewrites: {
     'en/:rest*': ':rest*'
