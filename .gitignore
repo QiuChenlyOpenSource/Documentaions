@@ -2,3 +2,5 @@
 .DS_Store
 Writerside/.DS_Store
 node_modules
+docs/.vitepress/dist
+.vitepress/cache
