@@ -22,13 +22,18 @@ jobs:
         with:
           node-version: '22'
 
-      - name: into correct src
-        run: cd vitepress
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - name: Install dependencies
-        run: cd vitepress && npm i && npm i -g pnpm
+        working-directory: vitepress
+        run: pnpm install
 
       - name: Build docs
-        run: cd vitepress && npm run docs:build
+        working-directory: vitepress
+        run: pnpm docs:build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -36,7 +41,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: cd vitepress && docs/.vitepress/dist
+          path: vitepress/docs/.vitepress/dist
 
   deploy:
     environment:
