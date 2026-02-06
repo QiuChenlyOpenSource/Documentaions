@@ -25,10 +25,10 @@ jobs:
       - name: into correct src
         run: cd vitepress
       - name: Install dependencies
-        run: npm i
+        run: cd vitepress && npm ci
 
       - name: Build docs
-        run: npm run docs:build
+        run: cd vitepress && npm run docs:build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -36,7 +36,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          path: cd vitepress && docs/.vitepress/dist
 
   deploy:
     environment:
