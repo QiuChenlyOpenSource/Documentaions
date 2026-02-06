@@ -25,7 +25,7 @@ jobs:
       - name: into correct src
         run: cd vitepress
       - name: Install dependencies
-        run: npm ci
+        run: npm i
 
       - name: Build docs
         run: npm run docs:build
