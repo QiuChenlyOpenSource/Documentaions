@@ -34,10 +34,11 @@ features:
 <script setup>
 import CoreContributors from '../components/CoreContributors.vue'
 
-const members = [
+const coreMembers = [
   {
     avatar: 'https://github.com/QiuChenly.png',
     name: 'QiuChenly',
+    tag: '半步本科巅峰境界',
     title: '秋城落叶',
     links: [
       { icon: 'github', link: 'https://github.com/QiuChenly' }
@@ -46,13 +47,19 @@ const members = [
   {
     avatar: 'https://github.com/X1a0He.png',
     name: 'X1a0He',
+    title: 'XiaoHe',
     links: [
       { icon: 'github', link: 'https://github.com/X1a0He' }
     ]
-  },
+  }
+]
+
+const extraMembers = [
   {
     avatar: 'https://github.com/wibus-wee.png',
     name: 'wibus-wee',
+    tag: '大专',
+    tagVariant: 'gradient',
     links: [
       { icon: 'github', link: 'https://github.com/wibus-wee' }
     ]
@@ -90,6 +97,8 @@ const members = [
 
 ## About This Project
 
+大专看不懂英文的话可以在顶部切换为中文。
+
 **QiuChenly App Store** is a brand new, free, barrier-free app store and community.
 
 We have unified and encapsulated complete App and permission-related APIs. You only need to download, install, and complete simple configuration to use all the capabilities provided by QiuChenly.
@@ -104,9 +113,15 @@ The era of traditional pirate resource sites harvesting users is over. What you 
 
 ## Core Contributors
 
-Thanks to the following members for their contributions to the project (in no particular order)
+Core development and maintenance of QiuChen App Store
 
-<CoreContributors :members="members" />
+<CoreContributors :members="coreMembers" />
+
+## Additional Contributors
+
+Thanks to the following people for their contributions to the project (in no particular order)
+
+<CoreContributors :members="extraMembers" />
 
 <div style="margin-top: 32px; text-align: center;">
   <p style="color: var(--vp-c-text-2);">

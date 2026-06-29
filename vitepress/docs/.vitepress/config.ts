@@ -17,7 +17,7 @@ export default defineConfig({
   base: '/Documentaions/',
 
   rewrites: {
-    'en/:rest*': ':rest*'
+    'en{/*rest}': '{*rest}'
   },
 
   lastUpdated: true,

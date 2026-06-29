@@ -6,6 +6,9 @@
       </figure>
       <div class="member-info">
         <h3 class="name">{{ member.name }}</h3>
+        <div v-if="member.tag" class="title-tag-row">
+          <span class="title-tag" :class="`title-tag--${member.tagVariant || 'brand'}`">{{ member.tag }}</span>
+        </div>
         <p v-if="member.title" class="title">{{ member.title }}</p>
         <div v-if="member.links && member.links.length > 0" class="links">
           <VPSocialLink
@@ -90,6 +93,31 @@ defineProps({
   font-size: 14px;
   color: var(--vp-c-text-2);
   line-height: 1.4;
+}
+
+.title-tag-row {
+  margin: 0 0 8px 0;
+}
+
+.title-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+/* 本科：醒目的实心品牌色徽章 */
+.title-tag--brand {
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+}
+
+/* 大专：彩色渐变徽章 */
+.title-tag--gradient {
+  color: #fff;
+  background: linear-gradient(135deg, #f97316, #ec4899);
+  box-shadow: 0 2px 8px rgba(236, 72, 153, 0.35);
 }
 
 .links {

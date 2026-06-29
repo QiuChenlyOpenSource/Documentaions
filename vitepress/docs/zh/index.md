@@ -34,10 +34,11 @@ features:
 <script setup>
 import CoreContributors from '../components/CoreContributors.vue'
 
-const members = [
+const coreMembers = [
   {
     avatar: 'https://github.com/QiuChenly.png',
     name: 'QiuChenly',
+    tag: '半步本科巅峰境界',
     title: '秋城落叶',
     links: [
       { icon: 'github', link: 'https://github.com/QiuChenly' }
@@ -46,13 +47,19 @@ const members = [
   {
     avatar: 'https://github.com/X1a0He.png',
     name: 'X1a0He',
+    title: '小何',
     links: [
       { icon: 'github', link: 'https://github.com/X1a0He' }
     ]
-  },
+  }
+]
+
+const extraMembers = [
   {
     avatar: 'https://github.com/wibus-wee.png',
     name: 'wibus-wee',
+    tag: '大专',
+    tagVariant: 'gradient',
     links: [
       { icon: 'github', link: 'https://github.com/wibus-wee' }
     ]
@@ -104,9 +111,15 @@ const members = [
 
 ## 核心贡献者
 
-感谢以下成员为项目做出的贡献（排名不分前后）
+QiuChen App Store 的核心开发与维护
 
-<CoreContributors :members="members" />
+<CoreContributors :members="coreMembers" />
+
+## 额外贡献者
+
+感谢以下伙伴为项目做出的贡献（排名不分前后）
+
+<CoreContributors :members="extraMembers" />
 
 <div style="margin-top: 32px; text-align: center;">
   <p style="color: var(--vp-c-text-2);">

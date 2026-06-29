@@ -41,7 +41,21 @@ function sidebarMain(): DefaultTheme.SidebarItem[] {
       text: 'Getting Started',
       collapsed: false,
       items: [
-        { text: 'Quick Start', link: 'getting-started' },
+        {
+          text: 'Quick Start',
+          link: 'getting-started',
+          collapsed: false,
+          items: [
+            { text: 'Installation & Setup', link: 'installation' },
+            { text: 'App Management', link: 'app-management' },
+            { text: 'Adobe Center', link: 'adobe-center' },
+            { text: 'Download Manager', link: 'download-manager' },
+            { text: 'Music Player', link: 'music-player' },
+            { text: 'Network Proxy', link: 'network-proxy' },
+            { text: 'Community & Messages', link: 'community' },
+            { text: 'Settings', link: 'settings' },
+          ]
+        },
         {
           text: 'Special App Instructions',
           collapsed: false,

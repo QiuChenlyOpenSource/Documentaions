@@ -1,4 +1,4 @@
-import { compile, match } from 'path-to-regexp'
+import { compile, match as pathMatch } from 'path-to-regexp'
 import type { Plugin } from 'vite'
 import type { SiteConfig, UserConfig } from '../siteConfig'
 
@@ -19,10 +19,17 @@ export function resolveRewrites(
     }
   } else if (typeof userRewrites === 'object') {
     const rewriteRules = Object.entries(userRewrites || {}).map(
-      ([from, to]) => ({
-        toPath: compile(`/${to}`, { validate: false }),
-        matchUrl: match(from.startsWith('^') ? new RegExp(from) : from)
-      })
+      ([from, to]) => {
+        const toPath = compile(`/${to}`)
+        const matchUrl: (path: string) => false | { params: Record<string, string> } =
+          from.startsWith('^')
+            ? (path: string) => {
+                const res = new RegExp(from).exec(path)
+                return res ? { params: (res.groups || {}) as Record<string, string> } : false
+              }
+            : pathMatch(from)
+        return { toPath, matchUrl }
+      }
     )
 
     if (rewriteRules.length) {

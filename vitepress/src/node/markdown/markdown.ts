@@ -21,7 +21,16 @@ import type {
 } from '@shikijs/types'
 import anchorPlugin from 'markdown-it-anchor'
 import { MarkdownItAsync, type MarkdownItAsyncOptions } from 'markdown-it-async'
-import attrsPlugin, { type MarkdownItAttrsOptions } from 'markdown-it-attrs'
+import attrsPlugin from 'markdown-it-attrs'
+
+interface MarkdownItAttrsOptions {
+  /** left delimiter, default is `{`(left curly bracket) */
+  leftDelimiter?: string
+  /** right delimiter, default is `}`(right curly bracket) */
+  rightDelimiter?: string
+  /** rule of allowed attribute, empty means no limit */
+  allowedAttributes?: (string | RegExp)[]
+}
 import mditCjkFriendly from 'markdown-it-cjk-friendly'
 import { full as emojiPlugin } from 'markdown-it-emoji'
 import type { BuiltinLanguage, BuiltinTheme, Highlighter } from 'shiki'

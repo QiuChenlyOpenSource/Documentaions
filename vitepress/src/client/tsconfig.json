@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "outDir": "../../dist/client",
     "declaration": true,
+    "ignoreDeprecations": "6.0",
     "declarationDir": "../../dist/client-types",
     "types": ["../../client.d.ts", "@types/node"],
     "paths": {

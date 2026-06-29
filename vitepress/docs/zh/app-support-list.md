@@ -81,10 +81,7 @@ description: CoreInject 支持的 macOS App 列表
 
    根据你的选择不同，你需要另有取舍。
 
-有关上帝之眼的安装信息，请访问:
-解压的仓库zip文件夹/上帝之眼/readme.md 文件查阅安装方式 或
-访问[在线镜像](https://git.sr.ht/~qiuchenly/CoreInject/tree/c7030974c23c1b9541827af865afab7b808656fe/item/%E4%B8%8A%E5%B8%9D%E4%B9%8B%E7%9C%BC/readme.md)
-网页.
+有关上帝之眼的安装信息，请查阅 解压的仓库 zip 文件夹 / 上帝之眼 / readme.md 文件中的安装方式。
 
 ### Other Apps
 

@@ -103,7 +103,21 @@ function sidebarMain(): DefaultTheme.SidebarItem[] {
       text: '开始使用',
       collapsed: false,
       items: [
-        { text: '快速上手', link: 'getting-started' },
+        {
+          text: '快速上手',
+          link: 'getting-started',
+          collapsed: false,
+          items: [
+            { text: '安装与启动', link: 'installation' },
+            { text: '应用管理', link: 'app-management' },
+            { text: 'Adobe 中心', link: 'adobe-center' },
+            { text: '下载管理', link: 'download-manager' },
+            { text: '音乐播放器', link: 'music-player' },
+            { text: '网络代理', link: 'network-proxy' },
+            { text: '社区与私信', link: 'community' },
+            { text: '设置中心', link: 'settings' },
+          ]
+        },
         {
           text: '特殊 App 说明',
           collapsed: false,
