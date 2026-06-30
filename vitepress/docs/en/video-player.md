@@ -11,6 +11,8 @@ The media library includes a built-in video player for watching local videos sca
 The player has built-in **Bilibili danmaku** (comments scrolling across the screen), not `.srt` / `.ass` subtitles. External/embedded subtitles are not supported yet — see [Not Yet Supported](#limitations) at the end.
 :::
 
+![Danmaku scrolling across the video](/images/video-player/image.png)
+
 ## Accessing playback {#access}
 
 ### Local videos in the media library
