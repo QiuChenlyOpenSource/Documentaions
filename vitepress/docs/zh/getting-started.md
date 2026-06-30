@@ -5,7 +5,7 @@ description: QiuChenly 应用商店使用指南
 
 # QiuChenly 应用商店
 
-QiuChenly 应用商店 是一个功能丰富的 macOS 应用管理平台，集应用注入破解、Adobe 全套件管理、高速下载器、音乐播放器、透明代理、社区论坛等功能于一体。
+QiuChenly 应用商店 是一个功能丰富的 macOS 应用管理平台，集应用注入破解、Adobe 全套件管理、高速下载器、音乐播放器、原生视频播放器、透明代理、社区论坛等功能于一体。
 
 ## 系统要求 {#prerequisite}
 

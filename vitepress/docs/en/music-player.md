@@ -7,6 +7,10 @@ description: QiuChenly App Store built-in music player complete operation guide
 
 QiuChenly App Store has a built-in full-featured local music player that supports music library management, playback, lyrics display, and dynamic cover art backgrounds.
 
+::: tip Looking for video?
+This page covers the music player. The media library also includes a [Native Video Player](./video-player) with danmaku, thumbnail preview, and episode playback.
+:::
+
 ## Accessing the Music Player {#access}
 
 Click the **"Media Library"** icon in the left navigation bar, or enter from the **"Music"** card on the home page.

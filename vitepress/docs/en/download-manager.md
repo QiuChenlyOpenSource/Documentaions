@@ -128,12 +128,10 @@ To prevent unauthorized access and path traversal attacks, three levels of white
 
 ## Bilibili Video Download {#bilibili}
 
-QiuChenly App Store supports Bilibili video downloads:
+For the full guide — Bilibili login, downloading favorites and collections, and download settings (quality / codec, etc.) — see the dedicated page **[Bilibili Video Download](./bilibili-download)**.
 
-1. Find the Bilibili entry on the Apps page and **scan QR code to log in**
-2. Browse the uploader's video list and click to download
-3. Download tasks are automatically added to the Download Manager
-4. Supports resumable downloads and retries
+Download tasks are managed together here in the Downloads page, can be played once finished, and also appear in the media library after their directory is scanned.
+
 
 ## Download Status Descriptions {#statuses}
 

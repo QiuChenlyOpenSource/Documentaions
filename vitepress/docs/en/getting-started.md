@@ -5,7 +5,7 @@ description: Hayaku App Store User Guide
 
 # Getting Started
 
-Hayaku (formerly CoreInject) is a feature-rich macOS application management platform that combines app injection/cracking, Adobe suite management, high-speed downloading, a music player, transparent network proxy, community forums, and more into one integrated tool.
+Hayaku (formerly CoreInject) is a feature-rich macOS application management platform that combines app injection/cracking, Adobe suite management, high-speed downloading, a music player, a native video player, transparent network proxy, community forums, and more into one integrated tool.
 
 ## System Requirements {#prerequisite}
 
@@ -35,6 +35,7 @@ The main interface has a left sidebar with the following modules:
 | **Adobe Center** | Online download, offline install, and management of Adobe products |
 | **Download Manager** | Multi-threaded high-speed downloader (aria2-based) with resume support |
 | **Music Player** | Local music library management, playback, lyrics, visualizations |
+| **Native Video Player** | Built-in player for media-library videos and Bilibili: danmaku, thumbnail preview, episode playback |
 | **Network Proxy** | L3 transparent gateway, HTTP/SOCKS5 proxy, multiple outbound protocols |
 | **Community Forums** | Per-app discussion boards with posts, replies, and likes |
 | **Messages** | One-on-one direct messaging |
@@ -164,6 +165,30 @@ MP3, FLAC, AAC, ALAC, WAV, AIFF, OGG, WMA, and other mainstream formats.
 - Dual-style lyrics page (switchable)
 - Word-level synchronized highlighting
 - Native parsing — no frontend push needed
+
+For the full guide, see [Music Player](./music-player).
+
+---
+
+## Native Video Player {#video-player}
+
+The media library includes a built-in video player for watching local videos scanned into the library, and it also handles Bilibili online playback.
+
+### Core Features
+
+- **Local Video Scanning**: Scans video directories by extension (MKV, MP4, MOV, AVI, WMV, TS, FLV, WebM, RMVB, etc.), with cover art / resolution / duration metadata
+- **Playback Controls**: Play/pause, ±5s seek, draggable progress bar, volume/mute, fullscreen, frame snapshot, technical info overlay
+- **Keyboard Shortcuts**: `Space`, `←`/`→`, `↑`/`↓`, `M`, `F`, `I`
+- **Danmaku**: Bilibili danmaku with show/hide toggle, font size (50%–200%), font choice, opacity/speed/area
+- **Preview**: Thumbnail on hover; cached/downloading/failed range display for online playback
+- **Episode Playback + Touch Bar**: Collections play continuously with Previous/Next episode on the Touch Bar strip
+- **Timed Close**: Auto-close off / when finished / after 5–120 minutes
+
+::: warning Note
+This player uses **danmaku** (Bilibili bullet comments), not `.srt` / `.ass` subtitles. It also does not (yet) offer quality selection, variable speed, picture-in-picture, or resume-from-position.
+:::
+
+For the full guide, see [Native Video Player](./video-player).
 
 ---
 
