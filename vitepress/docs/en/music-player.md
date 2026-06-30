@@ -85,21 +85,49 @@ A mini player bar is always displayed at the bottom of the app, uninterrupted ac
   - **Shuffle**: Randomly selects the next track
   - **Repeat One**: Loops the current track
 - **Progress bar**: Draggable for seeking
+- **Play queue**: Click the list icon on the right to open the "Play Queue" panel (see [Play Queue](#queue))
 - Click the mini player bar to expand to the full playback page
 
 ### Global Hotkeys
 
-System-level hotkeys that can control playback even when the app is in the background. Can be customized in **Manage → System Settings → Media Settings**.
+![Global hotkeys settings](/images/music-player/global-hotkeys.png)
+
+System-level hotkeys that can control playback even when the app is in the background. Enable and customize them in **Manage → System Settings → Media Settings**.
+
+::: warning Must be enabled manually (off by default)
+Global hotkeys have an **"Enable Global Hotkeys" master switch that is off by default**. Only when enabled do the hotkeys take effect system-wide (overriding the same combinations in other apps); when off, bindings are saved but not registered with the system.
+:::
 
 | Action | Default Hotkey | How to Change |
 |------|-----------|---------|
-| Play / Pause | `Ctrl + Option + Space` | Click "Modify" and press the new key combination to record |
-| Previous | `Ctrl + Option + ←` | Same as above |
-| Next | `Ctrl + Option + →` | Same as above |
-| Volume Up | `Ctrl + Option + ↑` | Same as above |
-| Volume Down | `Ctrl + Option + ↓` | Same as above |
+| Play / Pause | `⌘ + Ctrl + Shift + Space` | Click "Modify" and press the new key combination to record |
+| Previous | `⌘ + Ctrl + Shift + ←` | Same as above |
+| Next | `⌘ + Ctrl + Shift + →` | Same as above |
+| Volume Up | `⌘ + Ctrl + Shift + ↑` | Same as above |
+| Volume Down | `⌘ + Ctrl + Shift + ↓` | Same as above |
 
-Click **"Modify"** and press the keyboard combination to record a new hotkey (press Esc to cancel). The system automatically detects hotkey conflicts.
+::: tip Default keys changed
+The old default `Ctrl + Option` combination conflicted with the macOS VoiceOver modifier key and input source switching (`Ctrl + Option + Space`), causing hotkeys to be intercepted by the system. The new version uses the three-modifier `⌘ + Ctrl + Shift` combination, which does not conflict with any system-level shortcuts. **If you previously saved old hotkeys, they are automatically migrated to the new combination after upgrading.**
+:::
+
+Click **"Modify"** and press the keyboard combination to record a new hotkey (press Esc to cancel). The system automatically detects hotkey conflicts; if duplicates exist, you must resolve them before saving.
+
+## Play Queue {#queue}
+
+Click the **list icon** on the right of the mini player bar to open the "Play Queue" panel and view/manage the upcoming tracks.
+
+- **Queue source**: Playing a single track makes the queue that one song; playing a whole album makes the queue all tracks of the album
+- **Current track highlighted**: Opening the panel auto-scrolls to the currently playing track and smoothly follows as the track changes
+- **Click to jump**: Click any row to jump and play that track immediately
+- **Remove a track**: Hover a row and click the trash icon to remove it from the queue (removing the currently playing track automatically advances to the next, or stops when the queue is empty)
+- **Queue count**: The panel header shows the number of tracks in the queue
+
+### Adding Songs to the Queue
+
+On each row of the **album detail page** or the **music library track list**, hover to reveal two action buttons:
+
+- **Play Next**: Inserts after the current track and plays once the current one finishes
+- **Add to Queue**: Appends to the end of the queue without interrupting current playback
 
 ## Lyrics Page {#lyrics}
 
@@ -135,7 +163,14 @@ Click the QiuChenly App Store icon in the macOS menu bar to open the **"Now Play
 
 ## Status Bar Lyrics {#menubar-lyrics}
 
-Displays album cover art and current lyrics in the top menu bar of the screen (visible even when the app is in the background). Can be toggled on/off in **Media Settings**.
+Displays the music status item (album cover art / lyrics) in the top menu bar of the screen (visible even when the app is in the background). You can toggle the entire status item on/off in **Media Settings**, and further adjust:
+
+- **Display mode** (three options):
+  - **Full**: Cover + text (adjustable width)
+  - **Album Only**: Shows only the cover square
+  - **Icon Only**: Shows only the app icon
+- **Status item width**: In Full mode, adjustable between **120–360px**; the text area stretches accordingly
+- **Status bar lyrics** (independent toggle): When on, the text area shows the current lyric line (marquee, falling back to ♪ when no lyrics are available); when off, it shows "Track name · Artist". Only takes effect in Full mode
 
 ## Touch Bar Lyrics Strip {#touchbar}
 
@@ -167,6 +202,13 @@ QiuChenly App Store integrates with the macOS system media API:
 - **Lock Screen**: Displays album cover art and playback controls
 - **AirPods and other headphones**: Inline remote control
 - **Touch Bar**: Playback controls
+
+## Close Without Quitting (Background Resident) {#close-behavior}
+
+Clicking the **red close button** at the top-left of the window no longer quits the app — instead it **hides the window**: music keeps playing in the background, and the menu bar / status bar lyrics and global hotkeys remain available.
+
+- **Bring it back**: Click the Dock icon, or reopen the app, to restore the window
+- **Quit completely**: Use `⌘ Q`, the "Quit" menu item, or right-click the Dock icon → "Quit"
 
 ## Playback History & Recommendations {#history}
 
@@ -210,7 +252,8 @@ Click **"Manage"** in the music sidebar to enter.
 Configurable in **Manage → System Settings → Media Settings**:
 
 - **Lyrics page style**: Switch between two styles
-- **Global hotkeys**: Customize hotkeys for Play/Pause, Previous, Next, Volume Up, Volume Down
-- **Status bar lyrics**: Menu bar persistent lyrics toggle
+- **Global hotkeys**: Master switch (off by default) + customizable keys for Play/Pause, Previous, Next, Volume Up, Volume Down
+- **Menu bar status item**: Toggle + display mode (Full / Album Only / Icon Only) + width adjustment (120–360px)
+- **Status bar lyrics**: Independent lyrics display toggle (shows only "Track name · Artist" when off)
 - **Touch Bar lyrics strip**: Display mode and layout preset
 - **Auto pause/resume**: Automatic behavior when switching output devices
