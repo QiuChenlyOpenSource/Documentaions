@@ -45,25 +45,39 @@ The bottom control bar includes:
 | **Stats** | Overlay codec, bitrate, buffering and other playback info |
 | **More menu (⋯)** | Danmaku, timed close, always-on progress bar, etc. (below) |
 
+::: tip Control bar auto show/hide
+The control bar appears as soon as the mouse enters the video and hides itself after about 2 seconds of no movement; moving the mouse outside the video no longer pops it up by mistake.
+:::
+
 ## Keyboard shortcuts {#hotkeys}
 
 | Key | Action |
 |-----|--------|
 | `Space` | Play / Pause |
 | `←` / `→` | Rewind / Forward 5s |
-| `↑` / `↓` | Volume up / down |
-| `M` | Mute |
+| `↑` / `↓` | Volume up / down (on-screen volume bar) |
+| `M` | Mute / unmute (on-screen volume bar) |
 | `F` | Toggle fullscreen |
+| `D` | Show / hide danmaku |
 | `I` | Stats overlay |
+
+When you adjust the volume or toggle mute, a **volume bar** (speaker icon, progress, and percentage) pops up in the center of the screen, animates smoothly, then fades out automatically.
+
+![Volume bar popping up in the center of the screen while adjusting volume](/images/video-player/image-1.png)
 
 ## Danmaku {#danmaku}
 
-Control danmaku in the **More menu (⋯)**:
+Control danmaku in the **More menu (⋯)**, or press `D` at any time to toggle it on / off:
 
-- **Show danmaku**: Turn danmaku on / off
+- **Show danmaku**: Turn danmaku on / off (shortcut `D`)
 - **Danmaku font size**: 50% / 75% / 100% / 125% / 150% / 200%
 - **Danmaku font**: Default, PingFang SC, Hiragino Sans GB, STHeiti, STKaiti, Yuanti SC
 - Supports scrolling, top-fixed and bottom-fixed modes; opacity, scroll speed, and on-screen area are adjustable
+- **Advanced danmaku**: Renders Bilibili advanced danmaku (large-text comments, motion-path tweening, transforms and other effects), scaled proportionally to the current frame per the official spec
+- **Brightness adaptation**: Danmaku brightness adapts to the video automatically — no longer washed-out and dim over HDR video, nor too bright over regular video
+- **Full-screen spread**: When there are many danmaku they spread evenly across the whole screen instead of piling up in the top row, and appear the moment playback starts with no wait
+
+![Danmaku spread across the whole screen with large-text advanced effects](/images/video-player/image-2.png)
 
 ## Preview & cache {#preview}
 
