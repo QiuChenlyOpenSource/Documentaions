@@ -40,13 +40,13 @@ Displays current login device information:
 | Setting | Options | Description |
 |--------|------|------|
 | **Appearance** | Light / Dark / Follow System | Real-time switch, no restart needed |
-| **Language** | 8 languages available | Real-time switch, takes effect immediately |
+| **Language** | 11 languages available | Real-time switch, takes effect immediately |
 | **Splash Animation** | On/Off | Genshin Impact-style WebGL opening animation |
 | **Genshin Cursor** | On/Off | Global Genshin Impact-style mouse cursor |
 
 ### Supported Languages
 
-Simplified Chinese, English, 日本語, 한국어, Русский, Deutsch, Français, Español
+Simplified Chinese, Traditional Chinese (Taiwan / Hong Kong / Macau), English, 日本語, 한국어, Français, Deutsch, Español, Русский
 
 The language selector is located in the top right corner of the Manage page and can also be set in the setup wizard.
 
@@ -55,10 +55,14 @@ The language selector is located in the top right corner of the Manage page and 
 | Setting | Description | Default |
 |--------|------|--------|
 | **Download Path** | File save directory | `~/Downloads/QiuChenlyAppStore` |
-| **Simultaneous Downloads** | Maximum concurrent download tasks | 5 |
-| **Auto Check for Updates** | Automatically detect app updates | On |
-| **Check Interval** | 1-1440 minutes | 60 minutes |
-| **Update Channel** | Stable only / Include beta | Stable |
+| **Simultaneous Downloads** | Maximum concurrent download tasks | 3 |
+
+## Update Settings {#update}
+
+| Setting | Description |
+|--------|------|
+| **Auto Check for Updates** | Automatically detect app updates |
+| **Update Channel** | Stable only / Include beta |
 
 ## Proxy Settings {#proxy}
 

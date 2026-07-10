@@ -77,9 +77,9 @@ Open a browser and visit `https://www.google.com`. If it loads normally, the pro
 
 ## Policy Groups & Node Switching {#policy}
 
-Every subscription is treated as a **policy group**. In addition to subscription groups, the system ships with built-in groups such as **Manual (SELECT)**, **Auto-select (URL-TEST)** and **Fallback (FALLBACK)**.
+Every subscription is treated as a **policy group**. Besides the subscription groups, the only built-in group is **Manual (SELECT)** — all other policy groups (auto-select, fallback, AI reachability, Git over SSH, etc.) are created by you as needed: on the **Policy Groups page → New Group**, the group editor's **"Presets…"** dropdown fills in common configurations with one click (group types: `select` / `url-test` / `fallback` / `load-balance` / `geo` / `ssh-test` / `reach-test`); just rename the group, tick its member nodes and save.
 
-![Policy group list: Manual / Subscription / Auto-select / Fallback](/images/network-proxy/image-16.png)
+![Policy group list](/images/network-proxy/image-16.png)
 
 In the menu-bar quick panel, click "Switch" to set the current outbound to your subscription policy group or any member within it.
 

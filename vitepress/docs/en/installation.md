@@ -130,8 +130,7 @@ QiuChenly App Store supports automatic update checking:
 
 1. Go to **Manage** → **System Settings** → **Update**
 2. Enable **"Check for updates automatically"**
-3. Set the check interval (1-1440 minutes)
-4. Select the update channel: **Stable** or **Include beta**
+3. Select the update channel: **Stable** or **Include beta**
 
 When a new version is available, a **"{n} app(s) have new versions"** notification will appear at the top of the home page. Click to update.
 
