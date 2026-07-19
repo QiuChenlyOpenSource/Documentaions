@@ -54,6 +54,7 @@ function sidebarMain(): DefaultTheme.SidebarItem[] {
             { text: 'Music Player', link: 'music-player' },
             { text: 'Native Video Player', link: 'video-player' },
             { text: 'Network Proxy', link: 'network-proxy' },
+            { text: 'Desktop Wallpaper', link: 'wallpaper' },
             { text: 'Community & Messages', link: 'community' },
             { text: 'Settings', link: 'settings' },
           ]

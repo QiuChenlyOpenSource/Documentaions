@@ -172,29 +172,37 @@ LAN devices can connect through the following methods:
 
 ### Outbound Protocols
 
-| Protocol | Description |
+All outbound protocols are developed in-house and can be used directly in nodes / subscriptions:
+
+| Protocol | Notes |
 |------|------|
-| **Trojan** | TLS camouflage proxy, supports gRPC/WS/HTTP2/QUIC transport |
-| **VMess** | V2Ray core protocol, supports AEAD encryption |
-| **VLESS** | Lightweight protocol, supports Vision flow control camouflage + Reality TLS fingerprint concealment |
-| **Shadowsocks** | Classic encrypted proxy, supports multiple encryption algorithms |
-| **Hysteria2** | High-speed proxy protocol based on QUIC |
-| **TUIC** | Lightweight proxy protocol based on QUIC |
-| **Snell** | Surge-specific proxy protocol |
+| **VLESS** | Lightweight protocol, supports Vision flow control and Reality |
+| **VMess** | V2Ray core protocol, AEAD encryption |
+| **Trojan** | TLS camouflage proxy |
+| **Shadowsocks** | Classic AEAD encrypted proxy (aes-128-gcm / aes-256-gcm / chacha20-ietf-poly1305) |
+| **Snell** | Surge-specific protocol (v4 / v5) |
+| **Hysteria2** | High-speed QUIC-based protocol, supports Salamander obfuscation and port hopping |
+| **TUIC** | Lightweight QUIC-based protocol |
+| **AnyTLS** | Arbitrary TLS traffic camouflage |
 | **WireGuard** | Modern VPN tunnel protocol |
 | **SSH** | SSH secure tunnel |
-| **SOCKS5 over TLS** | TLS-encrypted SOCKS5 |
-| **AnyTLS** | Arbitrary TLS traffic camouflage |
+| **SOCKS5** | Standard SOCKS5, optionally over TLS |
+| **HTTP** | HTTP tunnel proxy |
 
-Transport layer support: **HTTP/2, HTTP/3 (QUIC), gRPC, WebSocket, TLS 1.3**.
+### Transport & Security Options {#security}
 
-### Salamander Obfuscation
+Each protocol can layer the following transport and security options as needed:
 
-Supports the Salamander obfuscation plugin for Shadowsocks.
+- **Transports**: TCP/TLS, WebSocket (wss), gRPC, HTTP/2, HTTP/3 (QUIC), xhttp / SplitHTTP, mKCP, HTTPUpgrade
+- **TLS & camouflage**: TLS 1.3, Reality (no domain or certificate required), browser-fingerprint mimicry, ECH (encrypted SNI), VLESS encryption
+- **Anti-blocking**: Salamander obfuscation, port hopping, mKCP header obfuscation
 
-### Reality TLS Concealment
+### Performance {#perf}
 
-VLESS + Reality achieves TLS fingerprint camouflage without the need for a domain name or certificate.
+A self-developed network core, optimized for long-lived connections and large flows:
+
+- Connection reuse (mux) — reuses connections and avoids repeated handshakes
+- Stable sustained high-throughput transfers; large uploads / downloads don't stall
 
 ### Rule-Based Routing
 
@@ -205,8 +213,10 @@ VLESS + Reality achieves TLS fingerprint camouflage without the need for a domai
 
 ### DNS System
 
-- Built-in DNS proxy server
-- **Fake IP** mode: Reduces DNS query latency
+- Built-in DNS server that hijacks and unifies system DNS
+- **Fake-IP** mode (IPv4 + IPv6): instant responses so routing decides on the domain rather than the IP, avoiding a resolve round-trip
+- **Encrypted upstreams**: DoH (DNS over HTTPS) / DoT (DNS over TLS) / plain UDP
+- Ordered multi-upstream failover + result caching
 - DNS requests are routed based on rules
 
 ### Connection Inspection

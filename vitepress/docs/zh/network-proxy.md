@@ -264,29 +264,37 @@ DNS 填任意公网 DNS（如 `8.8.8.8`）即可：
 
 ### 出站协议
 
+以下出站协议均为自研实现，可在节点 / 订阅中直接使用：
+
 | 协议 | 说明 |
 |------|------|
-| **Trojan** | TLS 伪装代理，支持 gRPC/WS/HTTP2/QUIC 传输 |
-| **VMess** | V2Ray 核心协议，支持 AEAD 加密 |
-| **VLESS** | 轻量协议，支持 Vision 流控伪装 + Reality TLS 指纹隐匿 |
-| **Shadowsocks** | 经典加密代理，支持多种加密算法 |
-| **Hysteria2** | 基于 QUIC 的高速代理协议 |
-| **TUIC** | 基于 QUIC 的轻量代理协议 |
-| **Snell** | Surge 专用代理协议 |
+| **VLESS** | 轻量协议，支持 Vision 流控与 Reality |
+| **VMess** | V2Ray 核心协议，AEAD 加密 |
+| **Trojan** | TLS 伪装代理 |
+| **Shadowsocks** | 经典 AEAD 加密代理（aes-128-gcm / aes-256-gcm / chacha20-ietf-poly1305） |
+| **Snell** | Surge 专用协议（v4 / v5） |
+| **Hysteria2** | 基于 QUIC 的高速协议，支持 Salamander 混淆与端口跳跃 |
+| **TUIC** | 基于 QUIC 的轻量协议 |
+| **AnyTLS** | 任意 TLS 流量伪装 |
 | **WireGuard** | 现代 VPN 隧道协议 |
 | **SSH** | SSH 安全隧道 |
-| **SOCKS5 over TLS** | TLS 加密的 SOCKS5 |
-| **AnyTLS** | 任意 TLS 流量伪装 |
+| **SOCKS5** | 标准 SOCKS5，可选 over TLS |
+| **HTTP** | HTTP 隧道代理 |
 
-传输层支持：**HTTP/2、HTTP/3 (QUIC)、gRPC、WebSocket、TLS 1.3**。
+### 传输与安全选项 {#security}
 
-### Salamander 混淆
+各协议可按需叠加以下传输与安全选项：
 
-支持 Shadowsocks 的 Salamander 混淆插件。
+- **传输层**：TCP/TLS、WebSocket(wss)、gRPC、HTTP/2、HTTP/3(QUIC)、xhttp / SplitHTTP、mKCP、HTTPUpgrade
+- **TLS 与伪装**：TLS 1.3、Reality（无需自备域名和证书）、浏览器指纹伪装、ECH（加密 SNI）、VLESS 加密
+- **抗封锁**：Salamander 混淆、端口跳跃、mKCP 头部伪装
 
-### Reality TLS 隐匿
+### 性能优化 {#perf}
 
-VLESS + Reality 实现 TLS 指纹伪装，无需域名和证书。
+自研网络内核，针对长连接与大流量做了优化：
+
+- 支持连接复用（mux），复用连接、减少重复握手
+- 长时间大流量收发稳定，大文件上传 / 下载不卡顿
 
 ### 规则路由
 
@@ -298,8 +306,10 @@ VLESS + Reality 实现 TLS 指纹伪装，无需域名和证书。
 
 ### DNS 系统
 
-- 内置 DNS 代理服务器
-- **Fake IP** 模式：减少 DNS 查询延迟
+- 内置 DNS 服务器，劫持系统 DNS 统一处理
+- **Fake-IP** 模式（IPv4 + IPv6）：域名即时应答，路由决策基于域名而非 IP，减少解析往返
+- **加密上游**：DoH（DNS over HTTPS）/ DoT（DNS over TLS）/ 明文 UDP
+- 多上游按序故障转移 + 解析结果缓存
 - DNS 请求按规则分流
 
 ### 连接审查

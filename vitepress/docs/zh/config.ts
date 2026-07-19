@@ -116,6 +116,7 @@ function sidebarMain(): DefaultTheme.SidebarItem[] {
             { text: '音乐播放器', link: 'music-player' },
             { text: '原生视频播放器', link: 'video-player' },
             { text: '网络代理', link: 'network-proxy' },
+            { text: '桌面动态壁纸', link: 'wallpaper' },
             { text: '社区与私信', link: 'community' },
             { text: '设置中心', link: 'settings' },
           ]
