@@ -1,348 +1,430 @@
 ---
-title: 网络代理（QiuChen Proxy）
-description: QiuChen 应用商店 QiuChen Proxy 透明代理引擎使用指南
+title: 网络代理配置指南（QiuChenNetProxy）
+description: QiuChenNetProxy 节点导入、证书验证、策略组、DNS、订阅与规则的图文配置指南
+outline: [2, 3]
 ---
 
-# 网络代理（QiuChen Proxy）
+# NetProxy GUI 配置指南
 
-QiuChenly 应用商店内置 QiuChen Proxy 代理引擎，基于 utun 虚拟网卡实现 L3 透明代理，提供类似 Surge 的网络接管能力。
+打开QiuChenNetProxy，左侧进入节点，点击添加节点或编辑节点。
 
-> **状态**：实验性功能，持续开发中。
+## 1. 开始：先配置节点，再选择出口
 
-本页聚焦 QiuChen Proxy 代理引擎本身的配置与玩法：[启用代理引擎](#enable) → 按 [快速上手](#quickstart) 三步导入订阅并跑通规则，再到 [策略组切换](#policy)、[连接审查](#inspect)、[局域网网关](#gateway)、[端口转发](#portforward) 等进阶能力。
+从左侧进入「节点」。手动节点、订阅节点按来源展示，搜索框可查名称、服务器、协议和来源。
 
-::: tip 还没装好应用？
-本页假设你已经安装并初始化好 QiuChenly 应用商店。应用的下载、去除隔离属性、安装守护进程、授权完全磁盘访问权限、首次配置等步骤，请先参考 [安装与启动](./installation)。
-:::
+![节点页面](/images/network-proxy/gui/01-nodes.png)
 
-## 启用代理引擎 {#enable}
+创建单个节点使用工具栏「添加节点」。已有手动节点可直接右键选择编辑节点，也可选中后从顶部节点操作编辑。订阅节点由其来源管理，不能把订阅节点当作手动节点随意编辑或删除。
 
-进入 **管理 → 系统设置 → 实验性功能**，打开 **「启用 QiuChenly 代理」** 开关。daemon 内置 netproxy 引擎会自动处理 utun 虚拟网卡并全局接管系统流量，**即时生效、无需重启、无需输入密码**。配置存储在 `~/.qiuchenly/` 目录，热重载自动生效。
+配置节点不会自动把所有流量切到它。保存后需要在「策略组」选择成员，再决定全局出口和选路模式；规则模式还要检查目标域名命中的策略。
 
-![开启「启用 QiuChenly 代理」开关](/images/network-proxy/image-10.png)
+## 2. 导入分享链接
 
-::: tip 关闭每次开门动画
-如果不想每次启动都播放原神开门动画，可在 **管理 → 系统设置 → 界面** 中关闭「启动动画（原神）」。
-:::
+在新增或编辑表单顶部，将完整分享链接粘贴到「粘贴节点链接」，点击「解析并填入配置」。
 
-![在「界面」设置中关闭启动动画](/images/network-proxy/image-9.png)
+![分享链接入口](/images/network-proxy/gui/02-share-link.png)
 
-## 快速上手 {#quickstart}
+例如：
 
-代理引擎开启后，三步即可跑通：**打开管理界面 → 添加订阅 → 配置规则**。
+```text
+trojan://authentication-password@proxy.example.com:443?sni=proxy.example.com&pcs=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&type=tcp#示例节点
+```
 
-### 第一步：打开代理管理 GUI
+其中：
 
-进入 **应用 → 特色合集**，点击 **「QiuChenly 代理」** 卡片，打开原生代理管理界面。
+- `authentication-password` 填入「认证 → 密码」。
+- `proxy.example.com:443` 填入「服务器」和「端口」。
+- `sni` 填入「传输 → SNI」。
+- `pcs` 填入「证书指纹（pcs）」；验证方式自动选择「固定证书 SHA256」。
+- `#` 后名称作为新建节点名。编辑已有节点时保留其原名称，避免导入后无意改变组引用。
 
-![从「应用 → 特色合集」打开 QiuChenly 代理](/images/network-proxy/image-11.png)
+核对服务器、端口、密码、SNI 和证书指纹，确认后点击「添加」或「保存」。字段提示错误时，按提示修改。
 
-主界面提供概览、连接审查、节点、策略组、规则、端口转发、DNS、网关等模块；菜单栏图标也提供快捷面板，可查看实时上下行速率、当前节点并快速切换。
+上例的 `a` 指纹只是格式示范。真实节点使用分享者提供的完整原始链接，不能照抄示例凭据。
 
-![代理管理主界面与菜单栏快捷面板](/images/network-proxy/image-12.png)
+## 3. 手动填写：每个控件对应什么
 
-### 第二步：添加订阅
-
-1. 在左侧导航进入 **订阅** 页，点击 **「添加订阅」**
-2. 填入订阅 URL、更新间隔（秒）与名称，点击 **保存**
-
-![添加订阅：填写 URL、间隔与名称](/images/network-proxy/image-13.png)
-
-订阅中的节点会自动解析导入，并显示节点数量与协议分布（例如 `VLESS 61 · HYSTERIA2 25 · SS 2`）。
-
-![订阅导入成功，显示节点数与协议分布](/images/network-proxy/image-14.png)
-
-> 若导入后没有立即刷新，切换一下页面即可看到最新数据。
-
-### 第三步：配置规则
-
-订阅导入后系统使用默认规则组。要让「非国内流量全部走代理」，进入 **规则** 页，将 **FINAL** 兜底规则的策略改为 **PROXY** 并保存：
-
-- **CN（GEOIP）→ DIRECT**：得益于内置 GEOIP 数据库，国内 IP 自动直连
-- **FINAL → PROXY**：其余所有流量走代理
-
-![将 FINAL 兜底规则改为 PROXY](/images/network-proxy/image-15.png)
-
-开启后系统流量自动按规则路由 —— 国内网站直连，被墙网站走代理。
-
-### 验证代理是否生效
-
-打开浏览器访问 `https://www.google.com`，能正常打开即表示代理工作正常。在代理管理界面可查看实时连接日志和流量统计。
-
-### 故障排查
-
-- **无法打开外网**：检查订阅节点是否有效，在节点列表手动测速
-- **国内网站变慢**：检查直连规则是否正确，国内 DNS 是否配置
-- **代理开关灰色无法点击**：确认 daemon 正在运行（`launchctl list | grep hayaku`）
-
-## 策略组与节点切换 {#policy}
-
-每一个订阅都会被视为一个 **策略组**。除订阅组外，系统只内置 **手动（SELECT）** 组——其余策略组（自动选择、故障转移、AI 可达、Git SSH 等）全部由你按需自建：在 **策略组页 → 新建组**，组编辑器右上角的 **「预设…」下拉** 可一键填充常用配置，选完改个组名、勾选成员节点即可保存。
-
-![策略组列表：手动 / 订阅 / 自动选择 / 故障转移](/images/network-proxy/image-16.png)
-
-### 组类型速查 {#policy-types}
-
-| 类型 | 行为 |
-| --- | --- |
-| `select` | 手选成员 |
-| `url-test` | 周期测速自动切延迟最低（预设「自动选择」） |
-| `fallback` | 按顺序取首个可用（预设「故障转移」） |
-| `load-balance` | 可达成员按目标哈希分摊 |
-| `geo` | 按出口国家筛成员（探测真实落地国） |
-| `ssh-test` | 探测出口能否连 SSH（git push），只选真正可用的节点（预设「Git over SSH」） |
-| `reach-test` | 对指定 URL 打真实 HTTPS 探测**地区封锁**，只选未被封的节点（预设「Claude / OpenAI / Gemini」） |
-
-组编辑器的成员清单支持**搜索、全选 / 全不选 / 反选**，还可以**按订阅整批勾选**（一键把某个订阅下的全部节点加为成员）；`fallback` 组按勾选顺序决定优先级。建好后，策略组页会给每个成员显示状态徽标：`ssh-test` 组显示「✓SSH / ✗不支持 / 未测」，`reach-test` 组显示「✓可达 / ✗被封 / 未测」，其余类型显示国家与延迟。
-
-### AI 可达组（reach-test）怎么配 {#policy-reach}
-
-以 Claude 为例：被封地区访问 `claude.ai` 不返回 403，而是 **302 跳转** 到 `https://www.anthropic.com/app-unavailable-in-region`。因此判定条件要写「状态码 + 协议头」组合：
-
-- **探测 URL**：`https://claude.ai`
-- **被封状态码**：`302`
-- **被封协议头**：`Location: *app-unavailable-in-region*`（`*` 通配；也支持 `/正则/`）
-- 两者**同时命中**才判被封——正常的 302 跳登录页不会误判。
-
-其余判定字段（全部可选，空=不判该维度）：可达状态码白名单、可达正向特征串（响应须包含）、被封负向特征串（响应包含即判被封，如 OpenAI 的 `unsupported_country`）。全不配时默认「非 403/451 即可达」。
-
-把规则里的 AI 域名（如 `DOMAIN-KEYWORD claude`）指向这个组，流量就只会走探测通过的节点。
-
-### 无可选节点时的行为 {#policy-onempty}
-
-`ssh-test` / `reach-test` 组在**成员还没探测完**或**全部被判不可达**时，按组编辑器里的「无可选节点时」策略处置：
-
-- **挂起等探测（默认）**：连接先挂起并立即触发一轮探测，探出可用节点后自动放行；绝不静默直连（直连既失败又暴露访问意图）。挂起连接在连接审查页可见，超时未果自动关闭。
-- **回退直连**：旧行为。
-- **拒绝连接**：直接拒绝（RST）。
-
-对应配置文件字段（`~/.qiuchenly/` 下 proxyGroups 条目）：`reachUrl` / `reachBlockStatus` / `reachBlockHeader` / `reachBlockBody` / `reachOkStatus` / `reachOkBody` / `reachTtl` / `onEmpty`（`hold`/`direct`/`reject`，空=挂起）。
-
-在菜单栏快捷面板点击「切换」，即可把当前出口切换为自己的订阅策略组或组内任意成员。
-
-![从菜单栏切换出口策略组](/images/network-proxy/image-17.png)
-
-切换出口的同时可对节点进行 **延迟测速**，挑选低延迟的稳定节点使用。
-
-![切换出口并对节点延迟测速](/images/network-proxy/image-18.png)
-
-> 手动策略组可以把其它策略组里某些稳定节点加进来，用于常用访问的快速切换。懒得折腾的话保持默认即可。
-
-## 连接审查 {#inspect}
-
-**连接审查** 把 **本机出站** 与 **外部设备访问** 汇总在同一张连接表里：活跃连接在上、历史保留在下，顶部提供搜索框与三组过滤器（按 **入站路径 / 设备 / 应用**）。得益于内置 GEOIP 数据库，所有 CN 流量自动走直连。
-
-每条连接行都带一枚 **路径徽章**，一眼区分入站来源：
-
-| 徽章 | 含义 | 行内信息 |
+| GUI 控件 | 原生 JSON 字段 | 填法 |
 | --- | --- | --- |
-| **本机** | 本机进程发起的出站连接 | App 图标与名称（或进程名）、经过的节点、时长 |
-| **转发** | 局域网设备经 L3 透明转发接入 | 设备厂商（MAC 反查）、经过的节点、时长 |
-| **代理** | 外部设备经 HTTP / SOCKS5 对外代理接入 | 客户端 IP、MAC、时长 |
+| 名称 | `name` | 唯一且非空的节点名，组成员按它引用 |
+| 协议 | `type` | 选择服务端实际协议，不由名字猜测 |
+| 服务器 | `host` | 服务地址或 IP，不填协议前缀和路径 |
+| 端口 | `port` | 1–65535 的整数，必须是客户端连接的端口 |
+| 用户名 | `username` | HTTP、SOCKS5、SSH 服务要求的用户名 |
+| 密码或 PSK | `password` | 节点认证凭据；**不填 pcs** |
+| UUID | `uuid` | VLESS、VMess、TUIC 的用户身份 |
+| 加密方法 | `method` | SS 或 ShadowTLS 内层对应的算法 |
+| 承载 | `network` | 服务端实际承载，如 TCP、WS、HTTPUpgrade、H2、gRPC、XHTTP、mKCP |
+| TLS | `tls` | 普通承载是否 TLS；Trojan、AnyTLS、Hy2、TUIC 自身的 TLS 路径仍按协议执行 |
+| SNI | `sni` | 服务端 TLS 身份，可能与连接 IP 不同 |
+| ALPN | `alpn` | 按逗号分隔，例如 `h2,http/1.1`；留空使用承载默认值 |
+| 路径 | `path` | WS/HTTPUpgrade/H2/XHTTP 的路径；gRPC 填服务名 |
+| HTTP Host | `wsHost` | 对端要求的 HTTP Host，供 WS/HTTPUpgrade 等 HTTP 承载使用 |
+| 附加 HTTP 头 | `wsHeaders` | 按 `名称: 值` 填写，以逗号分隔；可设置 User-Agent 等附加头 |
+| UDP 中继 | `udp` | 开启协议支持的 UDP 数据面 |
+| 出口网口 | `interface` | 一般留空；需要固定出口时选择真实网口，指定接口不可用时连接失败 |
+| Mux 协议、Mux 最大流 | `muxProtocol`、`muxMaxStreams` | 支持此扩展的协议使用，不能代替 Snell 的顺序连接复用 |
+
+选择哪个协议，认证与专用字段就按该协议显示。完整可复制例子见 [按协议完整 JSON 示例](./network-proxy-configuration#按协议完整-json-示例)。
 
-目标列会把 Fake-IP 自动还原为真实域名，不用对着 `198.18.x.x` 猜是哪个网站。
+ALPN 在 JSON 中填写字符串数组，例如 `["h2", "http/1.1"]`。HTTPUpgrade 使用 `http/1.1`，H2/gRPC 使用 `h2`，HTTP3 使用 `h3`，这些承载自动匹配对应值；普通 TLS 按填写的列表协商。分享链接中的 `alpn=h2%2Chttp%2F1.1` 对应 `["h2", "http/1.1"]`。
 
-![连接审查：实时连接列表与 GEOIP 直连](/images/network-proxy/image-19.png)
+### 本机节点
 
-### 决策链悬浮面板 {#inspect-trace}
+其他软件在本机提供代理时，「服务器」填 `127.0.0.1`，「端口」填该软件的监听端口，「出口网口」留空。不要把本机地址绑定到 Wi-Fi 或有线网口，也不要填写 QiuChenNetProxy 自己的代理监听端口。
+
+例如另一款软件提供 SOCKS5 服务 `127.0.0.1:1080`：
 
-**单击任意连接**，右侧会淡入一块悬浮玻璃面板，按时间线还原这条连接「为什么走了这个出口」：
+```json
+{
+  "name": "本机 SOCKS5",
+  "type": "socks5",
+  "host": "127.0.0.1",
+  "port": 1080
+}
+```
 
-> 输入（域名 / IP / 端口 / 进程）→ 匹配模式 → 命中规则 → 组选路 → 终态
+保存后，在策略组中选择「本机 SOCKS5」。全局默认出口保持原设置即可。HTTP 代理访问本机 Web 服务时，同样使用服务的真实地址和端口；目标命中 DIRECT 后会按本机路由访问。
 
-排查「这个域名为什么没走代理」「为什么被拒绝」时看这条链即可，无需翻日志。
+### 常见协议的必填项
 
-### 右键：独立制裁 {#inspect-context}
+| 协议 | 重点 |
+| --- | --- |
+| Trojan、AnyTLS | 地址、端口、认证密码、SNI、证书验证方式 |
+| SS | 地址、端口、加密方法、密码或 SS2022 Base64 密钥 |
+| Snell | 地址、端口、PSK、版本、适用模式；复用和 UDP 按服务端能力选择 |
+| VLESS、VMess | 地址、端口、UUID、承载、TLS；VLESS 的 Reality 与 Vision 填专用项 |
+| Hy2 | 地址、端口、认证密码、SNI、证书验证；混淆与跳跃另按服务端参数 |
+| TUIC | UUID 与密码都要正确，另核对拥塞控制和 UDP 模式 |
+| HTTP、SOCKS5 | 地址、端口；有认证再填用户名和密码 |
+| SSH | 地址、端口、用户名；密码或私钥认证；私钥口令与登录密码分开 |
+| WireGuard | 本地私钥、对端公钥、本地隧道地址，可选预共享密钥 |
+| ShadowTLS | 外层密码与服务名、内层算法和内层密码分别配置 |
+| DIRECT | 不填代理服务器与认证；可指定出口网口 |
 
-如果默认规则不够个性化，可在某条连接上右键，一套菜单全搞定：
+VLESS 的 `Security`、`Flow`、Reality 公钥、Short ID、握手指纹与 Encryption 按服务端要求填写；SSH 使用私钥时填写私钥路径与口令。WireGuard 和 Snell 的字段在各自专用配置区填写。
 
-- **打断此连接** / **打断该进程全部连接**
-- **按域名 / IP / 端口 / 进程加规则**（打开规则编辑器并预填该连接的信息）
-- **拉黑此域名 / 拉黑此 IP**（一键生成 REJECT 规则，二次确认后立即生效）
-- **复制目标 / 复制进程名**
+`echConfig`、Hy2 的 `obfsPassword/portHopping`、TUIC 的 `congestionControl/udpRelayMode`、VMess 的 `vmessSecurity`、ShadowTLS 的 `shadowTlsPassword` 等没有单独输入框的高级字段，请通过原生 JSON 或支持它们的来源导入。各字段的填法见 [配置文件指南](./network-proxy-configuration)。
 
-![右键连接：按域名/IP/端口/进程加规则或拉黑](/images/network-proxy/image-20.png)
+### HTTPUpgrade 与 VLESS 高级配置
 
-## 规则进阶 {#rules}
+在「承载」选择 HTTPUpgrade，对应 `network="httpupgrade"`。路径填写 `path`，HTTP Host 填写 `wsHost`，附加 HTTP 头填写 `wsHeaders`，ALPN 填写 `http/1.1` 或留空；TLS 与 SNI 分别使用 `tls`、`sni`。
 
-规则页支持的匹配类型：`DOMAIN-SUFFIX` / `DOMAIN` / `DOMAIN-KEYWORD` / `IP-CIDR` / `IP-CIDR6` / `DST-PORT` / `GEOIP` / `PROCESS-NAME` / `AND` / `FINAL`，策略可指向 DIRECT / PROXY / REJECT 或任意策略组。
+![HTTPUpgrade 承载与 HTTP 字段](/images/network-proxy/gui/15-httpupgrade-transport.png)
 
-规则表按从上到下的顺序匹配，先命中先生效。日常操作：
+未填写 User-Agent 时使用 `Mozilla/5.0`，可通过 `wsHeaders` 中的 `User-Agent: 值` 修改。HTTP Host 使用专用输入框；附加头中不要填写 `Host`、`Connection`、`Upgrade`、`Sec-WebSocket-Key`、`Sec-WebSocket-Version`。头名称须为合法 HTTP token，头名称和值不得包含 CRLF。
 
-- 顶部 **搜索框** 可按 **匹配值 / 策略 / 类型** 实时过滤，规则多时快速定位。
-- 每行 **悬停** 浮现 **编辑 / 删除** 按钮；**右键** 打开菜单（编辑规则 / 复制匹配模式 / 删除规则，规则集行另有立即刷新 / 停用启用）。
-- 拖拽行首的把手可 **调整规则优先级**（过滤激活时暂停拖拽，避免可见序与配置序错位）。
+VLESS 的握手指纹填写 `fingerprint`，例如 `chrome`。HTTPUpgrade 使用 TCP 上的 HTTP/1.1 升级，ALPN 固定为 `http/1.1`。`path` 按服务端路由填写，可包含非根路径和查询参数；服务端按实际路由配置路径。
 
-### AND 组合规则 {#rules-and}
+![VLESS 高级配置](/images/network-proxy/gui/16-vless-advanced.png)
 
-一条规则可以**同时匹配多个条件**，全部命中才生效。在规则编辑器把类型选为 **AND**，界面会展开子条件区，逐行添加（至少两条；子条件类型同上，不可再嵌套 AND）。
+Vision 节点的 `Flow` 选择 `xtls-rprx-vision`，`Encryption` 填服务端提供的完整 `encryption` 参数。
 
-典型用法：只把某个域名的特定端口分流——例如「`DOMAIN-SUFFIX example.com` **且** `DST-PORT 8443`」走代理，其余 example.com 流量不受影响；也可以用「进程 + 端口」组合做精准分流。
+密码填写节点认证凭据，`pcs` 填写服务端叶证书指纹。证书验证使用 `tlsVerify=system/pinned/skip`；固定模式的指纹填写 `pinnedPeerCertSha256`。
 
-### 规则集订阅（远程域名 / IP 列表） {#rules-ruleset}
+公开完整节点示例：
 
-规则集是**远程托管的批量规则源**：一个 https URL，内容一行一个 **域名** 或 **IPv4 / CIDR**（支持 hosts 格式、`#` 注释）。命中集合内条目的流量走你绑定的策略——常见用法是订阅广告域名黑名单走 REJECT，或把一批 AI 域名统一指到自建的 reach-test 组。
+```json
+{
+  "name": "VLESS-HTTPUpgrade示例",
+  "type": "vless",
+  "host": "proxy.example.com",
+  "port": 443,
+  "uuid": "b831381d-6324-4d53-ad4f-8cda48b30811",
+  "tls": true,
+  "tlsVerify": "system",
+  "sni": "edge.example.com",
+  "network": "httpupgrade",
+  "path": "/transport/edge?source=configuration-guide",
+  "wsHost": "edge.example.com",
+  "wsHeaders": "User-Agent: guide-client,X-Client: configuration-guide",
+  "alpn": ["http/1.1"],
+  "fingerprint": "chrome",
+  "flow": "xtls-rprx-vision",
+  "encryption": "mlkem768x25519plus.native.0rtt.1iegZ5U6hTQy_D4Wscuw5FthVzSw7ll5hmMvog2wLDo"
+}
+```
 
-在 **规则** 页点击 **「规则集」** 按钮管理：
+地址、UUID 和 Encryption 均为演示值，实际按服务端提供的完整参数填写，不能用于公网节点身份。
 
-- **添加**：填 URL、选 **命中策略**（REJECT / DIRECT / PROXY 或任意策略组）、设 **定时刷新间隔**（秒，0 = 仅手动）。添加即拉取并生效。
-- 列表中每个规则集显示 **条目数 / 绑定策略 / 刷新周期 / 上次刷新时间**；子菜单可 **立即刷新**、**编辑**（改 URL / 策略 / 间隔）、**停用 / 启用**、**删除**。
-- 域名行展开为 `DOMAIN-SUFFIX` 规则、IP 行展开为 `IP-CIDR` 规则（裸 IP 自动按 `/32`），统一注入在你的 FINAL 兜底规则之前——自己手写的规则永远优先。
+## 4. 证书验证：三种方式怎么选
 
-### 计划任务 {#rules-tasks}
+普通 TLS 节点向下滚动到「证书验证」。选择实际服务端的身份验证方式：
 
-规则集、订阅的定时刷新，以及 **策略组测速 / 出口国家探测 / SSH 能力探测 / 服务可达探测** 等全部周期任务，统一由 **计划任务** 调度（侧栏 **系统 → 计划任务**）。健康类任务**按策略组逐一派生**：任务名就是策略组名、旁边的类型徽章标明任务种类（组测速 / 出口国家 / SSH 能力 / 服务可达），一眼看清是哪个组触发的；每条任务的周期用**该组自己的配置**（组的测速间隔、geo/reach 的重测周期等），改组配置只影响本组任务。点「立即执行」为**强制重探**：绕过重测周期节流，之前探测失败的节点也会立刻重试：队列里能看到每个任务的 **周期 / 下次执行倒计时 / 上次执行结果**，失败会显示**失败原因**；点 **「立即执行」** 可手动唤醒，选中任务可查看最近的**执行历史**（时间 / 成败 / 原因 / 耗时）。任务状态持久化在本地，daemon 重启后按原计划恢复。
+| GUI 选择 | `tlsVerify` | 验证方式 |
+| --- | --- | --- |
+| 系统证书与主机名 | `system` | 验证系统信任链和服务身份；自签证书通常失败 |
+| 固定证书 SHA256 | `pinned` | 实际叶证书 DER 的 SHA256 必须匹配至少一个配置指纹 |
+| 跳过证书验证 | `skip` | 使用 TLS，但不核对服务端证书身份 |
 
-## 对外代理与局域网网关 {#gateway}
+新建节点默认系统验证。导入 `pcs` 后自动选择固定模式。已有节点未设置验证方式时使用跳过验证，编辑时按服务端证书选择所需模式。
 
-让内网其它设备（iPhone / Android / PC）直接走本机代理，有两种方式。
+### 4.1 系统证书与主机名
 
-::: warning DHCP 功能未完整测试
-截止目前，网关页的 **DHCP** 功能还没有经过完整测试，请不要自行启用，以免导致网络环境异常无法恢复。
-:::
+公开 CA 证书且 SNI 正确时选择此项：
 
-### 方式一：HTTP / SOCKS5 对外开放
+![系统证书验证](/images/network-proxy/gui/02-system-certificate.png)
 
-进入 **设置 → 对外代理服务**，把监听切换为 **「对外开放」**，开启 HTTP / SOCKS5（默认端口 `7890` / `7891`，HTTP 与 SOCKS5 同一监听仅端口不同）。其它设备把代理指向 `本机IP:端口` 即可。
+对应节点片段：
 
-![设置 → 对外代理服务，切换为对外开放](/images/network-proxy/image-21.png)
+```json
+{
+  "tlsVerify": "system",
+  "sni": "proxy.example.com"
+}
+```
 
-### 方式二：L3 层透明转发接管
+`host` 是拨号地址，`sni` 是证书身份。服务器可以填写 IP、SNI 填证书上的域名。不要为解决普通自签证书错误而把随机域名填进 SNI。
 
-进入 **网关** 页，启用 **L3 透明转发**，并勾选对外的 LAN 网卡。
+### 4.2 固定证书 SHA256 与 pcs
 
-![网关页启用 L3 透明转发](/images/network-proxy/image-22.png)
+分享链接提供 `pcs` 或管理员提供可信的叶证书指纹时，选择「固定证书 SHA256」并填写完整 64 位十六进制：
 
-然后在其它设备上手动配置网络，**网关填这台开启了 L3 转发的 Mac 的局域网 IP**，DNS 填任意公网 DNS，流量都会被 Mac 接管：
+![固定证书输入](/images/network-proxy/gui/03-pinned-certificate.png)
 
-以 iPhone 为例，手动配置 IPv4 —— 路由器（网关）填 Mac 的 IP：
+对应节点片段：
 
-![iPhone 手动配置 IPv4，网关指向 Mac](/images/network-proxy/image-25.png)
+```json
+{
+  "tlsVerify": "pinned",
+  "pinnedPeerCertSha256": [
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  ]
+}
+```
 
-DNS 填任意公网 DNS（如 `8.8.8.8`）即可：
+多证书轮换时每行一个指纹，保存为字符串数组。指纹匹配的是完整叶证书 DER，不是 ClientHello 的 `fingerprint`、Reality 公钥、SPKI 公钥哈希或 MITM 的 CA。
 
-![iPhone 手动配置 DNS](/images/network-proxy/image-26.png)
+固定模式可用于与该指纹一致的自签证书。指纹不匹配时测试会失败，请核对分享者提供的完整指纹。
 
-配置完成后，在 Mac 端「连接审查」即可看到来自局域网设备的「转发」流量及其完整决策链（输入 → 模式 → 命中规则 → 组选路 → 终态）。
+### 4.3 跳过证书验证
 
-![连接审查中可见局域网设备的转发流量与决策链](/images/network-proxy/image-27.png)
+选择后会显示「此模式不核对服务端证书身份」，同时清除不生效的固定指纹列表。
 
-> 接管后，局域网设备的所有流量仍会按照规则走对应的代理协议。
+![显式跳过证书验证](/images/network-proxy/gui/05-skip-certificate.png)
 
-## 端口转发 {#portforward}
+对应节点片段：
 
-内置完整的入站 / 出站端口转发管理系统，可理解为 Mac 上超轻量级的 frpc，支持端口映射等高级玩法。由于内核为自研，几乎可以做到任意转发。
+```json
+{
+  "tlsVerify": "skip"
+}
+```
 
-进入 **端口转发** 页，点击「添加转发」，填写协议、监听端口、目标主机与目标端口：
+服务端提供可信 `pcs` 时，选择固定证书 SHA256 并填写该指纹。选择跳过验证时不填写固定指纹。
 
-![添加端口转发规则](/images/network-proxy/image-23.png)
+### 4.4 输入无效时如何修正
 
-以上图为例：监听本机 `80`，其它机器访问这台 IP 的 `80`，所有数据包将被转发到目标机器 `192.168.1.233` 的 `8080` 端口。对内网设备同样适用，**开关即时生效，不重建其它转发**。
+空固定列表、长度不足、非十六进制、字段类型错误或模式冲突会阻止保存，并显示具体原因：
 
-## 手动添加节点 {#addnode}
+![非法指纹提示](/images/network-proxy/gui/06-invalid-certificate.png)
 
-如果有特殊的个别节点，可在 **节点** 页手动添加到手动分组。已实现全协议的稳定支持。
+修正为完整值后才能添加或保存。已填好的密码无需改动，因为密码和证书固定是两个独立字段。
 
-![手动添加节点，支持全协议](/images/network-proxy/image-24.png)
+Reality 使用协议公钥认证，Snell、ShadowTLS 使用各自协议设置；这些不按普通 TLS 的证书固定处理。切换协议或承载时，表单会清理不适用的证书设置。
 
-支持的协议：`ss` / `snell` / `trojan` / `vmess` / `vless` / `socks5` / `http` / `hy2` / `anytls` / `tuic` / `wireguard` / `ssh`。节点编辑器底部有 **「测试连接」** 按钮，保存前即可经当前表单配置真实建连验证节点可用性。实际稳定性仍需大家在使用中持续反馈。
+## 5. 测试与保存
 
-## 核心能力 {#capabilities}
+点击「测试」检查当前填写的节点；确认后点击「添加」或「保存」。保存成功后，编辑器关闭并刷新节点列表。
 
-### L3 透明转发
+手动配置的典型顺序：
 
-- 基于 **utun 虚拟网卡** 实现 L3 层透明代理
-- 无需手动配置系统代理
-- 多网卡环境自动识别，独立 IPv6 处理
-- 与 DHCP 解耦，无需手填 CIDR
+1. 输入或解析节点。
+2. 核对地址、认证、SNI、ALPN、承载和验证方式。
+3. 点击「测试」；失败时按错误提示检查配置。
+4. 添加或保存。
+5. 重新编辑节点，核对模式和指纹仍存在。
+6. 在策略组选择它，并确认当前出口与规则。
 
-### 对外代理（入站）
+![保存后节点页面](/images/network-proxy/gui/08-saved-node.png)
 
-局域网设备可通过以下方式接入：
+测试地址由配置中的 `test.proxyUrl` 指定。需要更换测试目标时，在配置文件中修改此项。
 
-- **HTTP 代理** + **SOCKS5 代理**，合一端口自动识别
+如果连接后立即关闭或没有目标响应，核对 `password/uuid`、协议类型和服务端账号。
 
-### 出站协议
+## 6. 策略组与出口选择
 
-以下出站协议均为自研实现，可在节点 / 订阅中直接使用：
+左侧「策略组」展示组类型、当前节点、成员、测试周期、容差和手动固定状态。
 
-| 协议 | 说明 |
-|------|------|
-| **VLESS** | 轻量协议，支持 Vision 流控与 Reality |
-| **VMess** | V2Ray 核心协议，AEAD 加密 |
-| **Trojan** | TLS 伪装代理 |
-| **Shadowsocks** | 经典 AEAD 加密代理（aes-128-gcm / aes-256-gcm / chacha20-ietf-poly1305） |
-| **Snell** | Surge 专用协议（v4 / v5） |
-| **Hysteria2** | 基于 QUIC 的高速协议，支持 Salamander 混淆与端口跳跃 |
-| **TUIC** | 基于 QUIC 的轻量协议 |
-| **AnyTLS** | 任意 TLS 流量伪装 |
-| **WireGuard** | 现代 VPN 隧道协议 |
-| **SSH** | SSH 安全隧道 |
-| **SOCKS5** | 标准 SOCKS5，可选 over TLS |
-| **HTTP** | HTTP 隧道代理 |
+![策略组](/images/network-proxy/gui/09-policies.png)
 
-### 传输与安全选项 {#security}
+「手动选择」组选成员即选择出口；自动组选择成员后会固定该选择，测速继续，但不自动改选，直到清除手动固定。查看「当前出口」标志确认使用哪个组。
 
-各协议可按需叠加以下传输与安全选项：
+菜单栏中，Proxy 右侧显示直接选中的策略组名称。展开 Proxy 后点击组名即可选择，二级成员仅点击选择，不含三级展开。
 
-- **传输层**：TCP/TLS、WebSocket(wss)、gRPC、HTTP/2、HTTP/3(QUIC)、xhttp / SplitHTTP、mKCP、HTTPUpgrade
-- **TLS 与伪装**：TLS 1.3、Reality（无需自备域名和证书）、浏览器指纹伪装、ECH（加密 SNI）、VLESS 加密
-- **抗封锁**：Salamander 混淆、端口跳跃、mKCP 头部伪装
+下图中，Proxy 选择了 `sub0`，显示的 `77 ms` 来自该组的当前成员。
 
-### 性能优化 {#perf}
+![浅色菜单中的策略组选择](/images/network-proxy/gui/17-strategy-menu-light.png)
 
-自研网络内核，针对长连接与大流量做了优化：
+![深色菜单中的策略组选择](/images/network-proxy/gui/18-strategy-menu-dark.png)
 
-- 支持连接复用（mux），复用连接、减少重复握手
-- 长时间大流量收发稳定，大文件上传 / 下载不卡顿
+对应完整片段：
 
-### 规则路由
+```json
+{
+  "mode": "global",
+  "proxy": "主要出口",
+  "proxyGroups": [
+    {
+      "name": "主要出口",
+      "type": "select",
+      "proxies": ["示例节点"],
+      "selected": "示例节点"
+    }
+  ]
+}
+```
 
-- 域名规则匹配（前缀 / 关键词 / 完整域名）
-- IP CIDR 规则匹配（IPv4 / IPv6）、目标端口匹配
-- 进程级流量分流（哪个 App 走哪个代理）
-- AND 组合规则：多条件同时命中才生效（见 [AND 组合规则](#rules-and)）
-- 支持规则组和策略组
+此片段要合并到包含名为 `示例节点` 的 `proxies` 数组的配置中。`proxy` 填组名，`selected` 填成员名，不能互换。
 
-### DNS 系统
+自动测速组使用 `type=url-test`，备用组 `fallback`，分担组 `load-balance`；来源动态展开使用订阅或来源集合。详细参数与例子见配置文件指南。
 
-- 内置 DNS 服务器，劫持系统 DNS 统一处理
-- **Fake-IP** 模式（IPv4 + IPv6）：域名即时应答，路由决策基于域名而非 IP，减少解析往返
-- **加密上游**：DoH（DNS over HTTPS）/ DoT（DNS over TLS）/ 明文 UDP
-- 多上游按序故障转移 + 解析结果缓存
-- DNS 请求按规则分流
+## 7. DNS：上游与 Fake-IP
 
-### 连接审查
+「DNS」查看当前上游数、协议、单次超时、Fake-IP 地址池和系统兜底状态；下方是实际域名访问记录。配置上游时核对协议与身份字段：
 
-- **设备 OUI 厂商反查**：识别局域网设备厂商
-- **设备类型分类**：手机/电脑/IoT 设备
-- **App 路径解析**：进程级流量归属
-- 三类流量设备归属：本机 / 局域网设备 / 外部
+![DNS 页面](/images/network-proxy/gui/10-dns.png)
 
-### ARP 加固
+```json
+{
+  "dns": {
+    "upstream": [
+      {
+        "proto": "doh",
+        "url": "https://1.1.1.1/dns-query",
+        "insecure": false
+      },
+      {
+        "proto": "dot",
+        "host": "223.5.5.5",
+        "port": 853,
+        "sni": "dns.alidns.com",
+        "insecure": false
+      }
+    ],
+    "timeoutMs": 3000,
+    "fakeIpRange": "198.18.0.0/15",
+    "fakeIp6Prefix": "fd00::",
+    "fallbackSystem": true
+  }
+}
+```
 
-Gratuitous ARP 防止 IP 冲突，透明网关模式下保持网络稳定。
+DNS `insecure` 只属于 DNS 上游，与节点的 `tlsVerify` 分开。DoH 填完整 URL；DoT/DoQ 填真实地址、端口和 SNI。Fake-IP 用于业务域名映射，不能把 Fake-IP 结果手抄到公网节点服务器地址。
 
-## 使用场景 {#scenarios}
+## 8. 订阅与来源集合
 
-### 本机透明代理
+「订阅」区分远程 URL 和本地文件，可设置更新周期、排除规则、启用状态并查看节点。来源关闭保留配置与缓存；删除来源会影响引用它的集合与组。
 
-开启后自动接管本机所有流量，按规则路由。
+![订阅页面](/images/network-proxy/gui/11-subscriptions.png)
 
-### 局域网网关模式
+```json
+{
+  "subscriptions": [
+    {
+      "name": "主要订阅",
+      "url": "https://subscription.example.com/list",
+      "updateInterval": 3600,
+      "enabled": true,
+      "isLocal": false,
+      "excludeFilters": ["剩余流量", "到期时间"]
+    }
+  ],
+  "subscriptionCollections": [
+    {
+      "name": "全部来源",
+      "includeAllSubscriptions": true,
+      "subscriptions": []
+    }
+  ]
+}
+```
 
-将 Mac 作为软路由，其它设备（手机/平板/PC）将网关设为本机 IP，或手动配置 HTTP/SOCKS5 代理指向本机。详见 [对外代理与局域网网关](#gateway)。
+排除规则是正则，不是密码或订阅令牌输入。更新时间单位秒；本地来源的 URL 字段保存文件绝对路径。集合引用的是来源，不是把当下节点名字写死。
 
-## 配置说明 {#config}
+## 9. 规则：顺序决定命中
 
-配置文件位于 `~/.qiuchenly/` 目录：
+「规则」展示顺序、类型、匹配内容和策略。先检查目标命中哪条，再调整出口，避免仅切节点却被更靠前的直连规则覆盖。
 
-- 支持热重载（修改配置后自动生效）
-- JSON 格式
-- 包含节点列表、规则组、策略组、DNS 设置
+![规则页面](/images/network-proxy/gui/12-rules.png)
 
-## 注意事项 {#notes}
+```json
+{
+  "rules": [
+    {
+      "type": "DOMAIN-SUFFIX",
+      "pattern": "example.cn",
+      "policy": "DIRECT"
+    },
+    {
+      "type": "FINAL",
+      "policy": "主要出口"
+    }
+  ]
+}
+```
 
-- QiuChen Proxy 独立于主应用，以独立守护进程运行
-- 遇到问题可尝试在 **管理 → 系统设置 → 实验性功能** 中关闭再重新开启 QiuChenly 代理
-- 支持持久化热开关（重启后保持上一次的开关状态）
+FINAL 放最后。规则的 `policy` 是 DIRECT、REJECT、PROXY、节点或策略组名称；不是服务器地址。AND 条件、规则集、网口和能力约束等见配置指南，不使用旧的位置数组。
+
+## 10. 设置、入站与端口转发
+
+「设置」显示连接状态、Helper 安装状态、数据目录与配置文件路径，也提供配置重载和本地工具安装入口。
+
+![设置页面](/images/network-proxy/gui/13-settings.png)
+
+对外 HTTP/SOCKS5 入站与出站节点分开：
+
+```json
+{
+  "inboundProxy": {
+    "http": {
+      "enable": true,
+      "listen": "127.0.0.1",
+      "port": 7890,
+      "user": "local-user",
+      "pass": "local-inbound-password"
+    },
+    "socks5": {
+      "enable": true,
+      "listen": "127.0.0.1",
+      "port": 7891
+    }
+  }
+}
+```
+
+这里 user/pass 是应用连接本机代理时的认证，不是远端节点密码。127.0.0.1 仅本机；0.0.0.0 对外接口监听。配置入口按当前 GUI 的代理/入站设置页面使用，不能把入站端口填到节点远端服务器。
+
+「端口转发」每条规则显示监听端口、目标、协议、出站和启停：
+
+![端口转发](/images/network-proxy/gui/14-port-forwards.png)
+
+```json
+{
+  "portForwards": [
+    {
+      "proto": "tcp",
+      "listenPort": 2222,
+      "targetHost": "ssh.example.com",
+      "targetPort": 22,
+      "via": "主要出口",
+      "enabled": true
+    }
+  ]
+}
+```
+
+监听与目标端口是两回事。`via` 选 DIRECT 或已有节点/组。启用后会真正监听端口，先确认该端口没有其他服务占用。
+
+## 11. 保存后的检查清单
+
+| 检查项 | 应看到的结果 |
+| --- | --- |
+| 原始分享解析 | 密码、SNI、pcs 分别进入对应位置 |
+| 固定证书模式 | 下拉显示固定 SHA256，列表有合法值 |
+| 再次编辑 | 名称、认证、承载和证书设置与保存前一致 |
+| 连接测试 | 显示测试结果；失败时按提示检查 |
+| 策略组 | 当前成员是所需节点 |
+| 规则模式 | 目标命中预期 policy |
+| 系统代理或 TUN | 实际使用方式与启用状态一致 |
+| 实际使用 | 网页和所需应用经所选出口正常访问 |
